@@ -1,0 +1,82 @@
+[
+  {
+    "username": "user3",
+    "password": "password3",
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "creditNum": "1111-2222-3333-4444",
+    "address": "789 Oak Ave, Town, Country",
+    "cart": [6],
+    "historyOfBoughtItems": [7, 8, 9]
+  },
+  {
+    "username": "user4",
+    "password": "password4",
+    "firstName": "Michael",
+    "lastName": "Brown",
+    "creditNum": "5555-6666-7777-8888",
+    "address": "321 Pine St, City, Country",
+    "cart": [2, 3],
+    "historyOfBoughtItems": [0, 1]
+  },
+  {
+    "username": "user5",
+    "password": "password5",
+    "firstName": "Emily",
+    "lastName": "Wilson",
+    "creditNum": "9999-8888-7777-6666",
+    "address": "456 Elm St, Town, Country",
+    "cart": [4, 5],
+    "historyOfBoughtItems": [3]
+  },
+  {
+    "username": "user6",
+    "password": "password6",
+    "firstName": "Daniel",
+    "lastName": "Lee",
+    "creditNum": "4444-3333-2222-1111",
+    "address": "987 Maple Ave, City, Country",
+    "cart": [8],
+    "historyOfBoughtItems": [10]
+  },
+  {
+    "username": "user7",
+    "password": "password7",
+    "firstName": "Olivia",
+    "lastName": "Taylor",
+    "creditNum": "7777-8888-9999-0000",
+    "address": "543 Elm St, Town, Country",
+    "cart": [9],
+    "historyOfBoughtItems": [6, 7]
+  },
+  {
+    "username": "user8",
+    "password": "password8",
+    "firstName": "Ethan",
+    "lastName": "Martinez",
+    "creditNum": "1111-9999-8888-6666",
+    "address": "789 Oak Ave, City, Country",
+    "cart": [0, 10],
+    "historyOfBoughtItems": [2, 4, 5]
+  },
+  {
+    "username": "user9",
+    "password": "password9",
+    "firstName": "Ava",
+    "lastName": "Hernandez",
+    "creditNum": "5555-4444-3333-2222",
+    "address": "123 Main St, Town, Country",
+    "cart": [1],
+    "historyOfBoughtItems": [9]
+  },
+  {
+    "username": "user10",
+    "password": "password10",
+    "firstName": "Noah",
+    "lastName": "Garcia",
+    "creditNum": "9999-1111-2222-8888",
+    "address": "987 Maple Ave, City, Country",
+    "cart": [7],
+    "historyOfBoughtItems": [8]
+  }
+]
