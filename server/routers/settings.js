@@ -1,6 +1,8 @@
 import {Router} from "express";
+import mongoose from "mongoose";
 
 const router = Router ();
+mongoose.set("strictQuery", false);
 
 router.get('/', async (req,res) => {
     try {

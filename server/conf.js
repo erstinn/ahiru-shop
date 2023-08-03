@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const MONGO_URI = process.env.MONGO_URL || 'mongodb://localhost:27017/test';
+const MONGO_URI = process.env.MONGO_URL || 'mongodb://localhost:27000/farm';
 
 const connectDB = async () => {
     try {

@@ -16,9 +16,8 @@ app.get('/', (req, res) => {
     res.send('Hello, Express!');
 });
 
-const port = 3000;
-app.listen(port, () => {
+app.listen(PORT, () => {
     connectDB().then(() => {
-        console.log(`Server is running on http://localhost:${port}`);
+        console.log(`Server is running on http://localhost:${PORT}`);
     });
 });

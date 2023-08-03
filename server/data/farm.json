@@ -1,0 +1,130 @@
+[
+  {
+    "id": 0,
+    "type": "duck",
+    "img": "/animals/duck1.png",
+    "name": "Mallard Duck",
+    "desc": "Adorable yellow duckling, perfect as a pet or gift.",
+    "stock": 1
+  },
+  {
+    "id": 1,
+    "type": "duck",
+    "img": "/animals/duck2.png",
+    "name": "Pekin Duck",
+    "desc": "Pair of adult ducks, great for breeding or pond decoration.",
+    "stock": 3
+  },
+  {
+    "id": 2,
+    "type": "duck",
+    "img": "/animals/duck3.png",
+    "name": "Muscovy Duck",
+    "desc": "Beautiful white duck, known for its elegance and grace.",
+    "stock": 89
+  },
+  {
+    "id": 3,
+    "type": "duck",
+    "img": "/animals/duck4.png",
+    "name": "Khaki Campbell Duck",
+    "desc": "Cute duckling family, an adorable addition to any farm or garden.",
+    "stock": 5
+  },
+  {
+    "id": 4,
+    "type": "duck",
+    "img": "/animals/duck5.png",
+    "name": "Runner Duck",
+    "desc": "Assorted flock of ducks, perfect for starting or expanding your own duck farm.",
+    "stock": 73
+  },
+  {
+    "id": 5,
+    "type": "others",
+    "img": "/animals/rabbit1.png",
+    "name": "Holland Lop Rabbit",
+    "desc": "Cute and fluffy rabbit, perfect as a pet or for animal lovers.",
+    "stock": 0
+  },
+  {
+    "id": 6,
+    "type": "others",
+    "img": "/animals/rooster.png",
+    "name": "Barred Rock Rooster",
+    "desc": "Colorful and vibrant rooster, adds a touch of farm charm to any setting.",
+    "stock": 8
+  },
+  {
+    "id": 7,
+    "type": "others",
+    "img": "/animals/hen.png",
+    "name": "Rhode Island Red Hen",
+    "desc": "Friendly and productive hen, provides fresh eggs for your breakfast.",
+    "stock": 63
+  },
+  {
+    "id": 8,
+    "type": "others",
+    "img": "/animals/horse1.png",
+    "name": "Arabian Horse",
+    "desc": "Elegant and majestic horse, ideal for horseback riding or equestrian enthusiasts.",
+    "stock": 30
+  },
+  {
+    "id": 9,
+    "type": "others",
+    "img": "/animals/horse2.png",
+    "name": "Quarter Horse",
+    "desc": "Graceful horse with a stunning coat, a beautiful addition to any ranch or stable.",
+    "stock": 95
+  },
+  {
+    "id": 10,
+    "type": "others",
+    "img": "/animals/chick1.png",
+    "name": "Buff Orpington Chick",
+    "desc": "Adorable and chirpy chick, great for educational purposes or as a classroom pet.",
+    "stock": 12
+  },
+  {
+    "id": 11,
+    "type": "others",
+    "img": "/animals/chick2.png",
+    "name": "Silkie Chick",
+    "desc": "Fluffy baby chick, a delightful gift for children or a charming addition to your farm.",
+    "stock": 37
+  },
+  {
+    "id": 12,
+    "type": "others",
+    "img": "/animals/cow1.png",
+    "name": "Holstein Cow",
+    "desc": "Gentle and docile cow, perfect for dairy production or as a friendly companion.",
+    "stock": 64
+  },
+  {
+    "id": 13,
+    "type": "others",
+    "img": "/animals/cow2.png",
+    "name": "Angus Cow",
+    "desc": "Strong and sturdy cow, an essential part of any livestock farm or cattle operation.",
+    "stock": 22
+  },
+  {
+    "id": 14,
+    "type": "others",
+    "img": "/animals/sheep1.png",
+    "name": "Suffolk Sheep",
+    "desc": "Soft and woolly sheep, provides cozy wool and brings a peaceful atmosphere to your farm.",
+    "stock": 79
+  },
+  {
+    "id": 15,
+    "type": "others",
+    "img": "/animals/sheep2.png",
+    "name": "Dorper Sheep",
+    "desc": "Fluffy sheep with a curious demeanor, an adorable addition to your pasture or petting zoo.",
+    "stock": 50
+  }
+]
