@@ -1,7 +1,7 @@
 import {Router} from "express";
-
-const router = Router ();
 import Animal from '../models/Animal.js';
+import {getAnimal} from "../middleware/animals.js";
+const router = Router ();
 
 router.get('/', async (req,res) => {
     try {
@@ -13,16 +13,22 @@ router.get('/', async (req,res) => {
         console.log(e);
     }
 });
-
-
-router.post('/', async (req,res) => {
+router.get('/:id', getAnimal, async (req, res) => {
     try {
-        res.json({users : []})
+        // const id = req.params.id;
+
     } catch (e) {
         console.log(e);
     }
 });
 
+router.delete('/:id', getAnimal, async(req, res) => {
+    try {
+
+    }   catch (e) {
+        
+    }
+});
 
 router.put('/:id', async (req,res) => {
     try {

@@ -2,6 +2,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import {StyledDashboard} from "../styles/Dashboard.styled.js";
 import {StyledArrow, StyledCatalog, StyledCatalogItem} from "../styles/Catalog.styled.js";
 // import {others, ducks} from "../extra/images.js";
+import { Link } from "react-router-dom";
 import { flushSync } from 'react-dom';
 
 //flushSync apparently uncommon (https://react.dev/reference/react-dom/flushSync)
@@ -50,7 +51,7 @@ const Dashboard = () => {
             }
         });
         ducksRef.current.scrollIntoView({
-            behavior: ' smooth',
+            behavior: 'smooth',
             block: 'nearest',
             inline: 'center'
         });
@@ -92,9 +93,11 @@ const Dashboard = () => {
 
                     {ducksArray.map((item, index) => (
                         <StyledCatalogItem key={index}>
+                            <Link to='/animals/:id'>
                             <img src={item.img} alt='/' ref={duckSlide === index ? ducksRef : null}/>
                             <h3>{item.name}</h3>
                             <p>{item.desc}</p>
+                            </Link>
                         </StyledCatalogItem>
                     ))}
                     <StyledArrow className='right' onClick={

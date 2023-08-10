@@ -1,3 +1,4 @@
+<h3>参考文献</h3>
 - icons from [icons8](icons8.com)
 
 - photos from [pexels](https://www.pexels.com/)
@@ -8,7 +9,13 @@
 
 - [carousel logic reference](https://react.dev/learn/manipulating-the-dom-with-refs#challenges)
 
+<h3>ahiru notes</h3>
+
 - created Custom Hooks here
+
+- reduce `fetch` by caching on other projects not this one though 
+
+-
 
 <h3> MongoDB notes </h3>
 
