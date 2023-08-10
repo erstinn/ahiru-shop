@@ -1,6 +1,5 @@
 [
   {
-    "id": 0,
     "type": "duck",
     "img": "/animals/duck1.png",
     "name": "Mallard Duck",
@@ -8,7 +7,6 @@
     "stock": 1
   },
   {
-    "id": 1,
     "type": "duck",
     "img": "/animals/duck2.png",
     "name": "Pekin Duck",
@@ -16,7 +14,6 @@
     "stock": 3
   },
   {
-    "id": 2,
     "type": "duck",
     "img": "/animals/duck3.png",
     "name": "Muscovy Duck",
@@ -24,7 +21,6 @@
     "stock": 89
   },
   {
-    "id": 3,
     "type": "duck",
     "img": "/animals/duck4.png",
     "name": "Khaki Campbell Duck",
@@ -32,7 +28,6 @@
     "stock": 5
   },
   {
-    "id": 4,
     "type": "duck",
     "img": "/animals/duck5.png",
     "name": "Runner Duck",
@@ -40,7 +35,6 @@
     "stock": 73
   },
   {
-    "id": 5,
     "type": "others",
     "img": "/animals/rabbit1.png",
     "name": "Holland Lop Rabbit",
@@ -48,7 +42,6 @@
     "stock": 0
   },
   {
-    "id": 6,
     "type": "others",
     "img": "/animals/rooster.png",
     "name": "Barred Rock Rooster",
@@ -56,7 +49,6 @@
     "stock": 8
   },
   {
-    "id": 7,
     "type": "others",
     "img": "/animals/hen.png",
     "name": "Rhode Island Red Hen",
@@ -64,7 +56,6 @@
     "stock": 63
   },
   {
-    "id": 8,
     "type": "others",
     "img": "/animals/horse1.png",
     "name": "Arabian Horse",
@@ -72,7 +63,6 @@
     "stock": 30
   },
   {
-    "id": 9,
     "type": "others",
     "img": "/animals/horse2.png",
     "name": "Quarter Horse",
@@ -80,7 +70,6 @@
     "stock": 95
   },
   {
-    "id": 10,
     "type": "others",
     "img": "/animals/chick1.png",
     "name": "Buff Orpington Chick",
@@ -88,7 +77,6 @@
     "stock": 12
   },
   {
-    "id": 11,
     "type": "others",
     "img": "/animals/chick2.png",
     "name": "Silkie Chick",
@@ -96,7 +84,6 @@
     "stock": 37
   },
   {
-    "id": 12,
     "type": "others",
     "img": "/animals/cow1.png",
     "name": "Holstein Cow",
@@ -104,7 +91,6 @@
     "stock": 64
   },
   {
-    "id": 13,
     "type": "others",
     "img": "/animals/cow2.png",
     "name": "Angus Cow",
@@ -112,7 +98,6 @@
     "stock": 22
   },
   {
-    "id": 14,
     "type": "others",
     "img": "/animals/sheep1.png",
     "name": "Suffolk Sheep",
@@ -120,7 +105,6 @@
     "stock": 79
   },
   {
-    "id": 15,
     "type": "others",
     "img": "/animals/sheep2.png",
     "name": "Dorper Sheep",

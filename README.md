@@ -8,9 +8,26 @@
 
 - [carousel logic reference](https://react.dev/learn/manipulating-the-dom-with-refs#challenges)
 
-primary: #fff89c
-secondary-blue:#F8F9FD
-accent-peach: #FFE8D6
-white: #FAFAFA or #F9F9F9//bgc
-    text: #333333
-nav: #A4D6A4
+- created Custom Hooks here
+
+<h3> MongoDB notes </h3>
+
+- authenticate towards the admin`MONGO_URL='mongodb://root:example@localhost:27000/farm?authSource=admin'`
+
+- Don't forget to create a user for a specific db before connecting to it:
+
+    ```
+        use admin
+        db.createUser({
+        user: "ahiru",
+        pwd: "ducky",
+        roles: [{ role: "readWrite", db: "farm" }]
+        })
+    ```
+    
+- or grant admin access to it:
+    ```
+      mongosh 'mongodb://adminUsername:adminPassword@localhost:27000/admin'
+      use farm
+      db.grantRolesToUser("adminUsername", [{ role: "readWrite", db: "farm" }])
+    ```

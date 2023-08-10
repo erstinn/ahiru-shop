@@ -21,6 +21,8 @@ export const StyledCatalogItem = styled.div`
   border-radius: 15px;
   background-color: ${(props) => props.theme.colors.secondary};
   padding: 1rem;
+  cursor: pointer;
+  
 
   & img {
     border: inherit;
@@ -28,6 +30,7 @@ export const StyledCatalogItem = styled.div`
     inline-size: 100%; //logical property for width
     aspect-ratio: 4/3;
     object-fit: cover; //crops images
+    cursor: pointer;
   }
 `
 export const StyledCatalogGroup = styled.div`
