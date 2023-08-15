@@ -30,7 +30,6 @@ const Dashboard = () => {
             });
     }, []);
 
-
     //made separate func for each scroll since will have too many args for useState stuff
     const handleDucksScroll = (direction, reset) => {
         flushSync(() => {
@@ -93,7 +92,7 @@ const Dashboard = () => {
 
                     {ducksArray.map((item, index) => (
                         <StyledCatalogItem key={index}>
-                            <Link to='/animals/:id'>
+                            <Link to={`/animals/${item._id}`}>
                             <img src={item.img} alt='/' ref={duckSlide === index ? ducksRef : null}/>
                             <h3>{item.name}</h3>
                             <p>{item.desc}</p>
@@ -113,9 +112,11 @@ const Dashboard = () => {
 
                     {othersArray.map((item, index) => (
                         <StyledCatalogItem key={index}>
+                            <Link to={`/animals/${item._id}`}>
                             <img src={item.img} alt='/' ref={otherSlide === index ? othersRef : null}/>
                             <h3>{item.name}</h3>
                             <p>{item.desc}</p>
+                            </Link>
                         </StyledCatalogItem>
                     ))}
                     <StyledArrow className='right' onClick={
@@ -127,7 +128,7 @@ const Dashboard = () => {
                 <StyledCatalog>
                     {ducksArray.map((item) => (
                     <StyledCatalogItem key={item.id}>
-                        <img src={item.img} alt='/'/>
+                        <img src={item.img} alt='/'/>   
                         <h3>{item.name}</h3>
                         <p>{item.desc}</p>
                     </StyledCatalogItem>

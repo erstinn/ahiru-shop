@@ -7,7 +7,9 @@ const theme = {
         secondary: '#FFE8D6',
         accent: '#F8F9FD',
         nav: '#d6d3ec',
-        text: '#333333'
+        text: '#333333',
+        button: '#E6AF2E',
+        disabledButton: '#D1CFC3',
     },
     fontSizes: {
         small: "calc(5px + 0.5vw)",
@@ -49,8 +51,8 @@ export const GlobalStyle = createGlobalStyle`
 
   h2 {
     //line-height: 0.3;
-    font-weight: ${(props) => props.theme.fontWeight.reg};
-    font-size: ${(props) => props.theme.fontSizes.slarge};
+    font-weight: ${(props) => props.theme.fontWeight.bold};
+    font-size: ${(props) => props.theme.fontSizes.slarge}; 
   }
   
   h1 {

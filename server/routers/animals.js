@@ -6,19 +6,21 @@ const router = Router ();
 router.get('/', async (req,res) => {
     try {
         const animals = await Animal.find();
-        console.log('this is Farm output:', animals);
+        // console.log('this is Farm output:', animals);
         res.json(animals)
 
     } catch (e) {
         console.log(e);
     }
 });
-router.get('/:id', getAnimal, async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
-        // const id = req.params.id;
-
+        const animal = await Animal.findById(req.params.id)
+        if (animal === null)
+            return res.status(404).json({ message: 'Animal not found' });
+        // console.log(animal, 'shunaho');
+        res.json(animal);
     } catch (e) {
-        console.log(e);
     }
 });
 

@@ -3,9 +3,9 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {Theme, GlobalStyle} from './styles/Theme.jsx'
 import Dashboard from "./components/Dashboard.jsx";
-import Navbar from "./components/Navbar.jsx";
 import Settings from "./components/Settings.jsx";
 import Animal from "./components/Animal.jsx";
+import Layout from "./components/Layout.jsx";
 
 
 //`Routes` = ahiru.com/ -> the / route
@@ -14,8 +14,6 @@ function App() {
   return (
       <BrowserRouter>
           <Theme>
-            <GlobalStyle />
-              <Navbar />
             <Routes>
                 <Route element={<Layout />}>
                   <Route path='/' element={<Dashboard />} />

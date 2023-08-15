@@ -40,9 +40,9 @@ const UserSchema = new mongoose.Schema(
             min: 6,
             max: 50,
         },
-        cart:{
-            type: '',
-        },
+        // cart:{
+        //     type: '',
+        // },
     },
     {timestamps: true} // to enforce timestamps: dateCreated
 );
