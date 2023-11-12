@@ -1,19 +1,15 @@
-<h3>参考文献</h3>
-- icons from [icons8](icons8.com)
 
-- photos from [pexels](https://www.pexels.com/)
+<h3>設定</h3>
+1. docker-compose.yaml `docker-compose up
+2. data to mongo: [farm](server/data/farm.json), [users](server/data/users.json)
 
-- [img looping](https://www.youtube.com/watch?v=x4bom6Udk_4)
 
-- [scrollbar](https://www.youtube.com/watch?v=lvKK2fs6h4I)
-
-- [carousel logic reference](https://react.dev/learn/manipulating-the-dom-with-refs#challenges)
 
 <h3>ahiru notes</h3>
 
-- created Custom Hooks here
+- Custom Hooks here
 
-- reduce `fetch` by caching on other projects not this one though 
+- reduce `fetch` by caching 
 
 -
 
@@ -38,3 +34,16 @@
       use farm
       db.grantRolesToUser("adminUsername", [{ role: "readWrite", db: "farm" }])
     ```
+
+
+
+<h3>参考文献</h3>
+- icons from [icons8](icons8.com)
+
+- photos from [pexels](https://www.pexels.com/)
+
+- [img looping](https://www.youtube.com/watch?v=x4bom6Udk_4)
+
+- [scrollbar](https://www.youtube.com/watch?v=lvKK2fs6h4I)
+
+- [carousel logic reference](https://react.dev/learn/manipulating-the-dom-with-refs#challenges)

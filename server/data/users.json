@@ -1,82 +1,126 @@
 [
   {
+    "email": "sarah.johnson@example.com",
     "username": "user3",
-    "password": "password3",
+    "passwordHash": "",
+    "salt": "",
     "firstName": "Sarah",
     "lastName": "Johnson",
     "creditNum": "1111-2222-3333-4444",
     "address": "789 Oak Ave, Town, Country",
-    "cart": [6],
-    "historyOfBoughtItems": [7, 8, 9]
+    "paymentMethod": {
+      "type": "Credit Card",
+      "expirationDate": "12/25"
+    },
+    "profilePic": ""
   },
   {
+    "email": "michael.brown@example.com",
     "username": "user4",
-    "password": "password4",
+    "passwordHash": "",
+    "salt": "",
     "firstName": "Michael",
     "lastName": "Brown",
     "creditNum": "5555-6666-7777-8888",
     "address": "321 Pine St, City, Country",
-    "cart": [2, 3],
-    "historyOfBoughtItems": [0, 1]
+    "paymentMethod": {
+      "type": "PayPal",
+      "email": "michael.brown@example.com"
+    },
+    "profilePic": ""
   },
   {
+    "email": "emily.wilson@example.com",
     "username": "user5",
-    "password": "password5",
+    "passwordHash": "",
+    "salt": "",
     "firstName": "Emily",
     "lastName": "Wilson",
     "creditNum": "9999-8888-7777-6666",
     "address": "456 Elm St, Town, Country",
-    "cart": [4, 5],
-    "historyOfBoughtItems": [3]
+    "paymentMethod": {
+      "type": "Debit Card",
+      "expirationDate": "08/24"
+    },
+    "profilePic": ""
   },
   {
+    "email": "daniel.lee@example.com",
     "username": "user6",
-    "password": "password6",
+    "passwordHash": "",
+    "salt": "",
     "firstName": "Daniel",
     "lastName": "Lee",
     "creditNum": "4444-3333-2222-1111",
     "address": "987 Maple Ave, City, Country",
-    "cart": [8],
-    "historyOfBoughtItems": [10]
+    "paymentMethod": {
+      "type": "Bank Transfer",
+      "accountNumber": "12345678"
+    },
+    "profilePic": ""
   },
   {
+    "email": "olivia.taylor@example.com",
     "username": "user7",
-    "password": "password7",
+    "passwordHash": "",
+    "salt": "",
     "firstName": "Olivia",
     "lastName": "Taylor",
     "creditNum": "7777-8888-9999-0000",
     "address": "543 Elm St, Town, Country",
-    "cart": [9],
-    "historyOfBoughtItems": [6, 7]
+    "paymentMethod": {
+      "type": "Credit Card",
+      "expirationDate": "03/27"
+    },
+    "profilePic": "",
+    "preferences": {
+      "theme": "Light",
+      "language": "English"
+    }
   },
   {
+    "email": "ethan.martinez@example.com",
     "username": "user8",
-    "password": "password8",
+    "passwordHash": "",
+    "salt": "",
     "firstName": "Ethan",
     "lastName": "Martinez",
     "creditNum": "1111-9999-8888-6666",
     "address": "789 Oak Ave, City, Country",
-    "cart": [0, 10],
-    "historyOfBoughtItems": [2, 4, 5]
+    "paymentMethod": {
+      "type": "Credit Card",
+      "expirationDate": "09/23"
+    },
+    "profilePic": ""
   },
   {
+    "email": "ava.hernandez@example.com",
     "username": "user9",
-    "password": "password9",
+    "passwordHash": "",
+    "salt": "",
     "firstName": "Ava",
     "lastName": "Hernandez",
     "creditNum": "5555-4444-3333-2222",
     "address": "123 Main St, Town, Country",
-    "cart": [1],
-    "historyOfBoughtItems": [9]
+    "paymentMethod": {
+      "type": "PayPal",
+      "email": "ava.hernandez@example.com"
+    },
+    "profilePic": ""
   },
   {
+    "email": "noah.garcia@example.com",
     "username": "user10",
-    "password": "password10",
+    "passwordHash": "",
+    "salt": "",
     "firstName": "Noah",
     "lastName": "Garcia",
     "creditNum": "9999-1111-2222-8888",
     "address": "987 Maple Ave, City, Country",
-    "cart": [7],
-    "historyOfBoughtItems": [8]
+    "paymentMethod": {
+      "type": "Debit Card",
+      "expirationDate": "11/26"
+    },
+    "profilePic": ""
   }
 ]

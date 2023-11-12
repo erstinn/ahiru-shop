@@ -16,58 +16,102 @@ export const StyledNavbar = styled.nav`
     margin-left: auto;
     margin-right: 0.5rem;
     cursor: pointer;
+    width: 48px;
+    height: 48px;
   }
+  
+  & > .right-container {
+    display: grid;
+    grid-template-columns: 4rem 4rem;
+    gap: 10px;
+    margin-left: auto;  
+    
+  }
+`
+
+export const StyledDropdownGroup = styled.div`
+  display: grid;
+  margin-left: auto;
+  grid-template-columns: 5rem 5rem;
 `
 export const StyledDropdown = styled.div`
   color: ${(props) => props.theme.colors.secondary};
   display: flex;
-  margin-left: auto;
   cursor: pointer;
-  
+
   & li {
     font-size: ${(props) => props.theme.fontSizes.small};
   }
-  
+
   & .mini-img {
-    max-width: 20px;
-    min-width: 15px;
+    width: 24px;
+    height: 24px;
     padding-right: 1px;
     top: 2px;
     position: relative;
   }
-  
-  & .dropdown-menu {
-    width: 6.5rem;
-    padding: 1rem;
-    margin-top: 4rem;
-    margin-left: -4.5rem;
-    border: 1px solid;
-    border-radius: 10px ;
+
+  & .dropdown-profile {
+    max-width: 150rem;
+    width: 100%;
     place-items: center;
-    position: fixed;
+    position: relative;
     background-color: ${(props) => props.theme.colors.secondary};
     color: ${(props) => props.theme.colors.text};
-    
+
   }
   
+  & .dropdown-profile-content {
+    position: absolute;
+    top: 5.5rem;
+    right: 2rem;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  & .dropdown-cart {
+    max-width: 500rem;
+    position: relative;
+    width: 100%;
+  }
+  
+  & .dropdown-cart-content {
+    position: absolute;
+    top: 5.5rem;
+    right: 8rem;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
   & .visible {
+    display: block;
     background-color: ${(props) => props.theme.colors.secondary};
     color: ${(props) => props.theme.colors.text};
     animation: fade-in 150ms forwards;
-    
+
   }
-  
-  & .hidden{
+
+  & .hidden {
     animation: fade-out 300ms forwards;
   }
 
-  @keyframes fade-in{
-    from { opacity: 0; }
-    to { opacity: 1;}
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
-  @keyframes fade-out{
-    to { opacity: 0; }
-    from   { opacity: 1;}
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+    from {
+      opacity: 1;
+    }
   }
 `
 

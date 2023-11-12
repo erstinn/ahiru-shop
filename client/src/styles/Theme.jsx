@@ -3,12 +3,14 @@
 const theme = {
     colors : {
         bg: '#F9F9F9',
+        bg_secondary: '#f1efe1',
         primary: '#d8d2ab',
         secondary: '#FFE8D6',
         accent: '#F8F9FD',
         nav: '#d6d3ec',
         text: '#333333',
         button: '#E6AF2E',
+        button_secondary: '',
         disabledButton: '#D1CFC3',
     },
     fontSizes: {

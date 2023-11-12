@@ -7,7 +7,7 @@ export const StyledAnimal = styled.div`
   padding: 5rem 0 5rem 0;
   border: 1px solid transparent;
   border-radius: 10px;
-  background-color: #f1efe1;
+  background-color: ${(props) => props.theme.colors.bg_secondary};
   place-items: center;
 
   & img {
@@ -48,6 +48,11 @@ export const StyledButton = styled.button`
   border: 0.5px solid gray;
   border-radius: 2px;
   text-transform: uppercase;
+  
+  & > img {
+    height: 36px;
+    width: 36px;
+  }
 `
 
 export const StyledCounterButton = styled.button`
