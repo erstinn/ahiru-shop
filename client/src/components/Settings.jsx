@@ -3,10 +3,21 @@ const Settings = () => {
     return (
         <StyledSettings>
             <StyledSidebar>
-                <img src="/assets/profile.png" alt=""/>
-                <button>
-                    Upload Photo
-                </button>
+                <div className='profile-section'>
+                    <img src="/assets/profile.png" alt=""/>
+                        <img className="add-button" src="/assets/icons8-add-48.png" alt=""/>
+                </div>
+
+                <div className="options-nav">
+                    <div className="option">
+                        {/* preferences: light/dark mode, language; change address*/}
+                        General
+                    </div>
+                    <div className="option">
+                        Security
+                    </div>
+                </div>
+
             </StyledSidebar>
 
         </StyledSettings>
