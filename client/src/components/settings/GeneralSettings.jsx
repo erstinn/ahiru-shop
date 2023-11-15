@@ -1,10 +1,13 @@
 import React from 'react';
+import { useForm } from 'react-hook-form'
+import {StyledInput} from "../../styles/Globals.styled.js";
 
 const GeneralSettings = () => {
     return (
         <div>
             <h3>Profile Settings</h3>
-            <h4>Username</h4>
+            <label htmlFor=""> <h4>Username</h4></label>
+            <StyledInput type="text" id="username" name="username"/>
 
             <h4>Email</h4>
 

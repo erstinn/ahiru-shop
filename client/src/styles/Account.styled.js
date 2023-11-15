@@ -9,6 +9,8 @@ export const StyledSettings = styled.div`
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.bg_secondary};
   
+  //min-height: calc(100vh-);
+  //max-height: 100%;
 `
 
 export const StyledMainBody = styled.div`

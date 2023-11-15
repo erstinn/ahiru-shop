@@ -13,6 +13,7 @@ const theme = {
         warning: '#d35a69',
         button_secondary: '',
         disabledButton: '#D1CFC3',
+        extra_gray: '#ada497',
     },
     fontSizes: {
         small: "calc(5px + 0.5vw)",
