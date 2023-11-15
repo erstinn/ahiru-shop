@@ -32,7 +32,7 @@ export const StyledAnimalDetails = styled.div`
 `
 
 
-export const StyledButton = styled.button`
+export const StyledPurchaseButton = styled.button`
   display: flex;
   margin-left: auto;
   place-items: center;

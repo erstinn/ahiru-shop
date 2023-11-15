@@ -10,13 +10,14 @@ const theme = {
         nav: '#d6d3ec',
         text: '#333333',
         button: '#E6AF2E',
+        warning: '#d35a69',
         button_secondary: '',
         disabledButton: '#D1CFC3',
     },
     fontSizes: {
         small: "calc(5px + 0.5vw)",
         med: "calc(6px + 0.5vw)",
-        large: "calc(7px + 1vw)",
+        large: "calc(7px + 0.7vw)",
         slarge: "calc(10px + 2vw)",
         vlarge: "calc(10px + 5vw)",
     },
@@ -38,6 +39,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.colors.bg};
     color: ${(props) => props.theme.colors.text};
     vertical-align: baseline;
+    letter-spacing: 0.15rem;
   }
 
   *, *::before *::after {
@@ -47,7 +49,14 @@ export const GlobalStyle = createGlobalStyle`
   h2, h3 {
     font-weight: 1000;
     line-height: 1.01;
+    letter-spacing: 0.10rem;
     margin-top: 0;
+  }
+
+  h4  {
+    font-weight: ${(props) => props.theme.fontWeight.thin};
+    font-size: ${(props) => props.theme.fontSizes.large};
+    
   }
 
 
@@ -63,7 +72,7 @@ export const GlobalStyle = createGlobalStyle`
 
   p {
     margin-top: 0;
-    font-size: calc(12px + 0.8vw);
+    font-size: ${(props) => props.theme.fontSizes.medium};
     color: ${(props) => props.theme.colors.text};
   }
 

@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import {
     StyledAnimal,
     StyledAnimalDetails,
-    StyledButton,
+    StyledPurchaseButton,
     StyledCounterButton,
     StyledCounter
 } from "../styles/AnimalDetails.styled.js";
@@ -58,10 +58,10 @@ const Animal = () => {
                         <StyledCounterButton isMaxMin={items === animal.stock} onClick={increment}>+</StyledCounterButton>
                     </StyledCounter>
                     <div>
-                        <StyledButton sold={animal.stock === 0}>
+                        <StyledPurchaseButton sold={animal.stock === 0}>
                             {animal.stock === 0 ? 'Sold Out'
                                 : "Add To Cart"}
-                        </StyledButton>
+                        </StyledPurchaseButton>
                     </div>
 
                 </StyledAnimalDetails>

@@ -1,19 +1,43 @@
 import styled from "styled-components";
-import {colorFadeIn} from "./animations/animations.js";
 
 export const StyledSettings = styled.div`
   display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
   margin: 3rem;
   padding: 5rem 0 5rem 0;
   border: 1px solid transparent;
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.bg_secondary};
   
-
 `
 
-export const StyledSidebar = styled.div`
-  //upload photo plan: ring with + button
+export const StyledMainBody = styled.div`
+  margin-top: 5rem;
+  
+  & .warning {
+    color: ${(props) => props.theme.colors.warning};
+  }
+  
+  & h3 {
+    border: none;
+    &::after {
+      display: flex;
+      width: 90%;
+      content: '';
+      padding-top: 0.75rem;
+      border-bottom: 1px solid ${(props) => props.theme.colors.text};
+      opacity: 25%;
+    }
+  }
+ 
+    
+    
+    
+    
+`
+
+export const StyledSidebar = styled.div` 
+  margin: 1rem;
 
   &:hover {
     
@@ -23,6 +47,7 @@ export const StyledSidebar = styled.div`
   }
   & .profile-section {
     cursor: pointer;
+    margin-left: 3rem;
   }
   
   & .add-button {
@@ -34,13 +59,17 @@ export const StyledSidebar = styled.div`
   }
   
   & .options-nav{
-    
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
   }
-  
-  & .option {
-    transition: all .3s;
-    background-color: transparent;
-    cursor: pointer;
+
+  //option animation logic from http://alticreation.com
+  .option {
+    //display: inline-block;
+    padding: 0.75rem 1.25rem;
+    width: 50%;
+    transition: all 0.3s;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -57,22 +86,34 @@ export const StyledSidebar = styled.div`
   }
   
   & .option::before {
-    position: absolute;
-    bottom: 0;
+    content: ''; //reminder css pseudo selectors need this for animations
+    position: absolute; //)
+    bottom: 0;  
     left: 0;
     width: 0;
     height: 100%;
     background-color: ${(props) => props.theme.colors.button};
-    transition: all .3s;
+    transition: all 0.3s;
     z-index: -1;
   }
-  
+
   & .option:hover {
     color: #fff;
-    & .option::before {
-      width: 100%;
-    }
+
   }
+  & .option:hover::before {
+    width: 100%;
+  }
+  
+  
+`
+export const StyledWarningButton = styled.button`
+  color: ${(props) => props.theme.colors.text};
+  background-color: ${(props) => props.theme.colors.warning};
+  border: 0.1px solid #BBBFBF;
+  border-radius: 2px;
+  padding: 0.7rem;
+  width: 25%;
 `
 
 export const StyledLogin = styled.div`
@@ -82,3 +123,4 @@ export const StyledLogin = styled.div`
 export const StyledLogout = styled.div`
     
 `
+

@@ -2,8 +2,9 @@ import React from 'react';
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 import {GlobalStyle} from "../styles/Theme.jsx";
+import Settings from "./settings/Settings.jsx";
 
-const Layout = () => {
+export const Layout = () => {
     return (
         <div>
             <GlobalStyle />
@@ -13,4 +14,11 @@ const Layout = () => {
     );
 };
 
-export default Layout;
+export const SettingsLayout = () => {
+    return (
+        <div>
+            <GlobalStyle />
+            <Settings />
+        </div>
+    );
+};
