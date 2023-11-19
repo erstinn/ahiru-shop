@@ -6,9 +6,13 @@ import {
     StyledPurchaseButton,
     StyledCounterButton,
     StyledCounter
-} from "../styles/AnimalDetails.styled.js";
+} from "./AnimalDetails.styled.js";
 
 const Animal = () => {
+    //connection variables
+    const animalsAPI = import.meta.env.VITE_APP_ANIMAL_API_URL;
+
+
     const [animal, setCurrentAnimal] = useState([]);
     const [items, setItems] = useState(0);
     const params = useParams();
@@ -16,7 +20,7 @@ const Animal = () => {
     //todo implement cache
 
     useEffect(() => {
-        fetch(`http://localhost:5175/api/animals/${params.id}`)
+        fetch(`${animalsAPI}/${params.id}`)
             .then(response => response.json())
             .then(data => {
                 setCurrentAnimal(data);

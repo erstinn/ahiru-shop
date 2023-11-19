@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar.jsx";
+import Navbar from "./navbar/Navbar.jsx";
 import {GlobalStyle} from "../styles/Theme.jsx";
 import Settings from "./settings/Settings.jsx";
 

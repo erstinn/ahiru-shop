@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {BaseButton} from "../../styles/Globals.styled.js";
 
 export const StyledAnimal = styled.div`
   display: grid;
@@ -32,22 +33,19 @@ export const StyledAnimalDetails = styled.div`
 `
 
 
-export const StyledPurchaseButton = styled.button`
+export const StyledPurchaseButton = styled(BaseButton)`
   display: flex;
   margin-left: auto;
   place-items: center;
-  padding: 1rem;
   width: 100%;
-  justify-content: center;
-  max-height: 3rem;
+  
   background-color: ${(props) => props.sold ? props.theme.colors.disabledButton : props.theme.colors.button};
   font-size: ${(props) => props.theme.fontSizes.large};
   font-weight: ${(props) => props.theme.fontWeight.thin};
   font-family: "Roboto", sans-serif;
   color: ${(props) => props.sold ? "gray" : props.theme.colors.text};
-  border: 0.5px solid gray;
-  border-radius: 2px;
-  text-transform: uppercase;
+  
+  
   
   & > img {
     height: 36px;
@@ -55,7 +53,7 @@ export const StyledPurchaseButton = styled.button`
   }
 `
 
-export const StyledCounterButton = styled.button`
+export const StyledCounterButton = styled(BaseButton)`
   width: 100%;
   height: 3rem;
   margin-inline: 0.5rem;
@@ -63,6 +61,8 @@ export const StyledCounterButton = styled.button`
   color: ${(props) => props.isMaxMin ? "gray" : props.theme.colors.text};
   border: 0.1px solid #BBBFBF;
   border-radius: 2px;
+  
+  box-shadow: ${(props) => props.isMaxMin && "none !important"};
 `
 export const StyledCounter = styled.div`
   display: flex;

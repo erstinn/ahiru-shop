@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {Theme, GlobalStyle} from './styles/Theme.jsx'
-import Dashboard from "./components/Dashboard.jsx";
+import Dashboard from "./components/dashboard/Dashboard.jsx";
 import Settings from "./components/settings/Settings.jsx";
-import Animal from "./components/Animal.jsx";
+import Animal from "./components/animals/Animal.jsx";
 import {Layout, SettingsLayout} from "./components/Layout.jsx";
 import PreferencesSettings from "./components/settings/PreferencesSettings.jsx";
 import SecuritySettings from "./components/settings/SecuritySettings.jsx";
@@ -23,11 +23,11 @@ function App() {
                   <Route path='/' element={<Dashboard />} />
                   <Route path='/animals/:id' element={<Animal />} />
                   {/*<Route path='/settings' element={<Settings />} />*/}
-                  <Route path='/settings' element={<SettingsLayout />} >
-                      <Route path='/settings' element={<GeneralSettings />} />
-                      <Route path='/settings/preferences' element={<PreferencesSettings />} />
-                      <Route path='/settings/security' element={<SecuritySettings />} />
-                      <Route path='/settings/transactions' element={<TransactionHistory />} />
+                  <Route path='settings' element={<SettingsLayout />} >
+                      <Route index element={<GeneralSettings />} />
+                      <Route path='preferences' element={<PreferencesSettings />} />
+                      <Route path='security' element={<SecuritySettings />} />
+                      <Route path='transactions' element={<TransactionHistory />} />
                    </Route>
                   <Route path='/login' element={<Dashboard />} />
                   <Route path='/logout' element={<Dashboard />} />

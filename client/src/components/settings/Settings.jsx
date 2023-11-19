@@ -1,4 +1,4 @@
-import {StyledMainBody, StyledSettings, StyledSidebar} from "../../styles/Account.styled.js";
+import {StyledMainBody, StyledSettings, StyledSidebar} from "./Settings.styled.js";
 import {NavLink, Outlet} from "react-router-dom";
 import React from "react";
 const Settings = () => {
@@ -11,19 +11,19 @@ const Settings = () => {
                 </div>
 
                 <div className="options-nav">
-                    <NavLink to="/settings" className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}`} >
+                    <NavLink to="/settings" end className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : null}`} >
                         {/* preferences: light/dark mode, language; change address*/}
                         General
                     </NavLink>
-                    <NavLink to="preferences" className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}`} >
+                    <NavLink to="preferences" className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : null}`} >
                         Preferences
                     </NavLink>
                     <NavLink to="security"
-                        className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}`} >
+                        className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : null}`} >
                         Security
                     </NavLink>
                     <NavLink to="transactions"
-                             className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}`} >
+                             className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : null}`} >
                         Transaction History
                     </NavLink>
                 </div>

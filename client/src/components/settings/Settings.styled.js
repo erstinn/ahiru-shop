@@ -8,13 +8,15 @@ export const StyledSettings = styled.div`
   border: 1px solid transparent;
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.bg_secondary};
+  place-content: center;
   
   //min-height: calc(100vh-);
   //max-height: 100%;
+
 `
 
 export const StyledMainBody = styled.div`
-  margin-top: 5rem;
+  //margin-top: 5rem;
   
   & .warning {
     color: ${(props) => props.theme.colors.warning};
@@ -22,6 +24,7 @@ export const StyledMainBody = styled.div`
   
   & h3 {
     border: none;
+    margin: 5rem 0 1rem 0;
     &::after {
       display: flex;
       width: 90%;
@@ -32,6 +35,10 @@ export const StyledMainBody = styled.div`
     }
   }
  
+  & .btn-26 {
+    width: 26px;
+    height: 26px;
+  }
     
     
     
@@ -39,7 +46,7 @@ export const StyledMainBody = styled.div`
 `
 
 export const StyledSidebar = styled.div` 
-  margin: 1rem;
+  margin: 1rem 1rem 1rem 2rem;
 
   &:hover {
     
@@ -107,22 +114,49 @@ export const StyledSidebar = styled.div`
     width: 100%;
   }
   
+  & .option.active {
+    color:  ${(props) => props.theme.colors.text_secondary};
+    background-color: ${(props) => props.theme.colors.button};
+  }
   
 `
-export const StyledWarningButton = styled.button`
-  color: ${(props) => props.theme.colors.text};
+export const StyledWarningBtn = styled.button`
+  color: ${(props) => props.theme.colors.text_secondary};
   background-color: ${(props) => props.theme.colors.warning};
   border: 0.1px solid #BBBFBF;
   border-radius: 2px;
   padding: 0.7rem;
   width: 25%;
+  cursor: pointer;
+  font-size: ${(props) => props.theme.fontSizes.med};
+  text-transform: uppercase;
 `
 
-export const StyledLogin = styled.div`
+export const StyledPaymentContainer = styled.div`
+  display: grid;
+  grid-template-columns: 0.2fr 0.8fr;
+  width: 100%;
+  max-width: 20%;
+  align-items: center;
+  
+  & .add-button {
+    display: inherit;
+    place-items: center;
+    cursor: pointer;
     
+  }
+  & .account-title {
+    margin-bottom: 0.7rem;
+  }
+  
+  & p {
+    font-weight: ${(props) => props.theme.fontWeight.thin};
+  }
 `
 
-export const StyledLogout = styled.div`
-    
+export const StyledDeleteModal = styled.div`
+  width: 50%;
+  height: 50%;
+  
+  
 `
-

@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
-import {StyledDropdown, StyledNavbar} from '../styles/StyledNavbar.js'
+import {StyledDropdown, StyledNavbar} from './StyledNavbar.js'
 import {Link} from "react-router-dom";
+import {createPortal} from "react-dom";
 
 const Navbar = () => {
+    const [loginModalVisible, setLoginModalVisible] = useState(false);
+
     const [cartDropdownVisible, setCartDropdownVisible] = useState(false);
     const [profileDropdownVisible, setProfileDropdownVisible] = useState(false);
 
@@ -31,7 +34,7 @@ const Navbar = () => {
             <div className="right-container">
 
                 <StyledDropdown className="dropdown-cart" >
-                    <img src="/assets/cart.png" onClick={() => showDropdownContents(false)}  alt="🔻"/>
+                    <img src="/assets/cart.png" onClick={() => showDropdownContents(false)} alt="🔻"/>
                     <div className={`dropdown-cart-content ${cartDropdownVisible ? 'visible' : 'hidden'}`}>
                         <h3>My Farm</h3>
                         <button>
@@ -42,12 +45,19 @@ const Navbar = () => {
                 </StyledDropdown>
 
                 <StyledDropdown className="dropdown-profile" >
-                    <img src="/assets/profile.png" onClick={() => showDropdownContents(true)}  alt="🔻"/>
+                    <img src="/assets/profile.png" onClick={() => showDropdownContents(true)} alt="🔻"/>
                     <div className={`dropdown-profile-content ${profileDropdownVisible ? 'visible' : 'hidden'}`} onClick={() => showDropdownContents(true)}>
                         <li><img className='mini-img' src="/assets/icons8-settings-48.png" alt=""/>
                         <Link to='/settings'> Settings </Link></li>
                         <li><img className='mini-img' src="/assets/icons8-login-48.png" alt=""/>
-                        <Link to='/login'> Login </Link></li>
+                        <Link to='/login' onClick={() => setLoginModalVisible(true)}> Login </Link></li>
+
+                        {
+                            loginModalVisible && createPortal(
+
+                            )
+                        }
+
                         <li><img className='mini-img' src="/assets/icons8-logout-48.png" alt=""/>
                         <Link to='/logout'> Logout </Link></li>
                     </div>

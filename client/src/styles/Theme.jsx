@@ -6,11 +6,13 @@ const theme = {
         bg_secondary: '#f1efe1',
         primary: '#d8d2ab',
         secondary: '#FFE8D6',
-        accent: '#F8F9FD',
+        accent: '#fbeac0',
         nav: '#d6d3ec',
         text: '#333333',
+        text_secondary: '#fff7dc',
         button: '#E6AF2E',
         warning: '#d35a69',
+        confirm: '#b6d069',
         button_secondary: '',
         disabledButton: '#D1CFC3',
         extra_gray: '#ada497',
@@ -30,33 +32,42 @@ const theme = {
 }
 
 export const GlobalStyle = createGlobalStyle`
+  
+  * {
+    font-size: 100%;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.15rem;
+  }
+  
   html, body, #root, .app {
     height: 100%;
     width: 100%;
     margin: 0;
-    font-size: 100%;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
     background-color: ${(props) => props.theme.colors.bg};
     color: ${(props) => props.theme.colors.text};
     vertical-align: baseline;
-    letter-spacing: 0.15rem;
+    
   }
 
   *, *::before *::after {
     box-sizing: inherit;
+    
   }
 
   h2, h3 {
-    font-weight: 1000;
+    font-weight: ${(props) => props.theme.fontWeight.regular};
     line-height: 1.01;
     letter-spacing: 0.10rem;
     margin-top: 0;
   }
 
+  h3  {
+    font-size: ${(props) => props.theme.fontSizes.med};
+  }
   h4  {
     font-weight: ${(props) => props.theme.fontWeight.thin};
-    font-size: ${(props) => props.theme.fontSizes.large};
+    font-size: ${(props) => props.theme.fontSizes.med};
     
   }
 

@@ -1,4 +1,4 @@
-import {StyledMainBody, StyledSettings, StyledSidebar} from "../../styles/Account.styled.js";
+import {StyledMainBody, StyledSettings, StyledSidebar} from "./Settings.styled.js";
 import {NavLink} from "react-router-dom";
 
 import React from 'react';

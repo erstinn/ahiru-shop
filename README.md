@@ -3,6 +3,10 @@
 1. docker-compose.yaml `docker-compose up
 2. data to mongo: [farm](server/data/farm.json), [users](server/data/users.json)
 
+<h3> 警告 </h3>
+
+- change `.env` variables if changing ports 
+
 
 
 <h3>ahiru notes</h3>

@@ -1,13 +1,16 @@
 import React, {useState, useRef, useEffect} from 'react';
-import {StyledDashboard} from "../styles/Dashboard.styled.js";
-import {StyledArrow, StyledCatalog, StyledCatalogItem} from "../styles/Catalog.styled.js";
+import {StyledDashboard} from "./Dashboard.styled.js";
+import {StyledArrow, StyledCatalog, StyledCatalogItem} from "./Catalog.styled.js";
 // import {others, ducks} from "../extra/images.js";
 import { Link } from "react-router-dom";
 import { flushSync } from 'react-dom';
+import animal from "../animals/Animal.jsx";
 
 //flushSync apparently uncommon (https://react.dev/reference/react-dom/flushSync)
 //but apparently needed to update ref
 const Dashboard = () => {
+
+    const animalsAPI = import.meta.env.VITE_APP_ANIMAL_API_URL;
     const [ducksArray, setDucksArray] = useState([]);
     const [othersArray, setOthersArray] = useState([]);
 
@@ -19,7 +22,7 @@ const Dashboard = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5175/api/animals')
+        fetch(animalsAPI)
             .then(response => response.json())
             .then(data => {
                 setDucksArray(data.filter(item => item.type === 'duck'));

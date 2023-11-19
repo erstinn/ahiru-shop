@@ -1,5 +1,6 @@
 /* eslint-env node */
-
+//
+//https://stackoverflow.com/questions/42541559/eslint-with-react-gives-no-unused-vars-errors
 module.exports = {
   env: { browser: true, es2020: true },
   extends: [
@@ -10,11 +11,14 @@ module.exports = {
   ],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', "react"],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
+    "react/prop-types": "off", //remove prop-type error that appear when using onClose
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
   },
 }
