@@ -5,14 +5,19 @@ import {StyledArrow, StyledCatalog, StyledCatalogItem} from "./Catalog.styled.js
 import { Link } from "react-router-dom";
 import { flushSync } from 'react-dom';
 import animal from "../animals/Animal.jsx";
+import {GetAllAnimals} from "../../hooks/dataFetch.jsx";
 
 //flushSync apparently uncommon (https://react.dev/reference/react-dom/flushSync)
 //but apparently needed to update ref
 const Dashboard = () => {
+    const animals = GetAllAnimals();
+    const [othersArray, setOthersArray] = useState(animals.filter(item => item.type !== 'duck'));
+    const [ducksArray, setDucksArray] = useState(animals.filter(item => item.type === 'duck'));
 
-    const animalsAPI = import.meta.env.VITE_APP_ANIMAL_API_URL;
-    const [ducksArray, setDucksArray] = useState([]);
-    const [othersArray, setOthersArray] = useState([]);
+    useEffect(() => {
+        setOthersArray(animals.filter(item => item.type !== 'duck'));
+        setDucksArray(animals.filter(item => item.type === 'duck'));
+    }, [animals]);
 
 
     const [duckSlide, setDuckSlide] = useState(1);
@@ -20,18 +25,6 @@ const Dashboard = () => {
     const ducksRef = useRef(null);
     const othersRef = useRef(null);
 
-
-    useEffect(() => {
-        fetch(animalsAPI)
-            .then(response => response.json())
-            .then(data => {
-                setDucksArray(data.filter(item => item.type === 'duck'));
-                setOthersArray(data.filter(item => item.type !== 'duck'));
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    }, []);
 
     //made separate func for each scroll since will have too many args for useState stuff
     const handleDucksScroll = (direction, reset) => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyledCancelBtn, StyledDeleteBtn, StyledWarningText} from "../../styles/Globals.styled.js";
-import {StyledModalContainer, StyledModalBlur} from "./Modal.styled.js";
+import {StyledModalContainer, StyledModalWrapper} from "./Modal.styled.js";
 
 const DeleteAccountModal = ({onClose}) => {
     return (
-        <StyledModalBlur>
-            <StyledModalContainer>
+        <StyledModalWrapper onClick={onClose}>
+            <StyledModalContainer onClick={e => e.stopPropagation()}>
                 <div className='modal-content'>
                     <StyledWarningText>Permanently delete your account?</StyledWarningText>
                     This action is irreversible.
@@ -15,7 +15,7 @@ const DeleteAccountModal = ({onClose}) => {
                     <StyledDeleteBtn>Delete Account</StyledDeleteBtn>
                 </div>
             </StyledModalContainer>
-        </StyledModalBlur>
+        </StyledModalWrapper>
     );
 };
 

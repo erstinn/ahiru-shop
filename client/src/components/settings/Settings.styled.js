@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {BaseSelect, StyledCancelBtn} from "../../styles/Globals.styled.js";
 
 export const StyledSettings = styled.div`
   display: grid;
@@ -9,9 +10,6 @@ export const StyledSettings = styled.div`
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.bg_secondary};
   place-content: center;
-  
-  //min-height: calc(100vh-);
-  //max-height: 100%;
 
 `
 
@@ -73,7 +71,7 @@ export const StyledSidebar = styled.div`
     grid-template-columns: 1fr;
   }
 
-  //option animation logic from http://alticreation.com
+  //option animation logic from https://alticreation.com
   .option {
     //display: inline-block;
     padding: 0.75rem 1.25rem;
@@ -154,9 +152,52 @@ export const StyledPaymentContainer = styled.div`
   }
 `
 
+export const StyledPaymentMethodInput = styled.div`
+  
+  & * {
+    margin-right: 2rem;
+    font-size: ${(props) => props.theme.fontSizes.med};
+    
+  }
+`
+
 export const StyledDeleteModal = styled.div`
   width: 50%;
   height: 50%;
-  
-  
 `
+
+export const StyledCancelInputBtn = styled(StyledCancelBtn)`
+  width: 7rem;
+  font-size: ${(props) => props.theme.fontSizes.vsmall};
+`
+
+export const StyledSelect = styled(BaseSelect)`
+  width: 100%;
+  min-width: 10rem;
+  max-width: 15rem;
+`
+
+export const PaymentMethodContainer = styled.div`
+    display: grid;
+`
+export const StyledRadio = styled.input`
+  display: grid;
+  place-content: center;
+  
+  &::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em ${(props) => props.theme.colors.accent};
+  }
+  
+  &:checked::before {
+    transform: scale(1);
+  }
+`
+
+
+

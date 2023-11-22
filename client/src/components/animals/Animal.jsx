@@ -7,28 +7,21 @@ import {
     StyledCounterButton,
     StyledCounter
 } from "./AnimalDetails.styled.js";
+import {GetAnimal} from "../../hooks/dataFetch.jsx";
 
 const Animal = () => {
     //connection variables
-    const animalsAPI = import.meta.env.VITE_APP_ANIMAL_API_URL;
-
-
-    const [animal, setCurrentAnimal] = useState([]);
     const [items, setItems] = useState(0);
     const params = useParams();
 
+    const retrievedAnimal = GetAnimal(params.id)
+    const [animal, setCurrentAnimal] = useState(retrievedAnimal);
     //todo implement cache
 
+
     useEffect(() => {
-        fetch(`${animalsAPI}/${params.id}`)
-            .then(response => response.json())
-            .then(data => {
-                setCurrentAnimal(data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    }, [params.id]);
+        setCurrentAnimal(retrievedAnimal)
+    }, [params.id, animal, retrievedAnimal]);
 
     const increment = () => {
         items < animal.stock ? setItems(items + 1) : '';

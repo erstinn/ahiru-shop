@@ -15,9 +15,10 @@ const theme = {
         confirm: '#b6d069',
         button_secondary: '',
         disabledButton: '#D1CFC3',
-        extra_gray: '#ada497',
+        extra_gray: '#c3bbaf',
     },
     fontSizes: {
+        vsmall: "calc(4px + 0.4vw)",
         small: "calc(5px + 0.5vw)",
         med: "calc(6px + 0.5vw)",
         large: "calc(7px + 0.7vw)",

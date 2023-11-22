@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const StyledModalBlur = styled.div`
+export const StyledModalWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -17,8 +17,8 @@ export const StyledModalContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: ${(props) => props.theme.colors.bg};
-  width: 25%;
-  height: 20%;
+  width: 35rem;
+  height: 15rem;
   border-radius: 5px;
   padding: 1rem;
   box-shadow: 0 3px 10px rgba(151, 151, 106, 0.44);

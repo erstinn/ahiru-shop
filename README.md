@@ -11,11 +11,16 @@
 
 <h3>ahiru notes</h3>
 
-- Custom Hooks here
+- TODO
 
-- reduce `fetch` by caching 
+  - Custom Hooks
 
--
+  - reduce `fetch` by caching 
+
+- use react-hook-form 
+  - [otherwise](https://www.freecodecamp.org/news/how-to-build-forms-in-react/)
+
+- 
 
 <h3> MongoDB notes </h3>
 

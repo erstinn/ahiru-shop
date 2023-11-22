@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import {StyledDropdown, StyledNavbar} from './StyledNavbar.js'
 import {Link} from "react-router-dom";
 import {createPortal} from "react-dom";
+import LoginModal from "../modals/LoginModal.jsx";
 
 const Navbar = () => {
-    const [loginModalVisible, setLoginModalVisible] = useState(false);
+    const [showLoginModal, setLoginModal] = useState(false);
 
     const [cartDropdownVisible, setCartDropdownVisible] = useState(false);
     const [profileDropdownVisible, setProfileDropdownVisible] = useState(false);
@@ -50,11 +51,11 @@ const Navbar = () => {
                         <li><img className='mini-img' src="/assets/icons8-settings-48.png" alt=""/>
                         <Link to='/settings'> Settings </Link></li>
                         <li><img className='mini-img' src="/assets/icons8-login-48.png" alt=""/>
-                        <Link to='/login' onClick={() => setLoginModalVisible(true)}> Login </Link></li>
+                        <Link to='/login' onClick={() => setLoginModal(true)}> Login </Link></li>
 
-                        {
-                            loginModalVisible && createPortal(
-
+                        {showLoginModal && createPortal(
+                                <LoginModal onClose={setLoginModal(false)} />
+                                , document.body
                             )
                         }
 

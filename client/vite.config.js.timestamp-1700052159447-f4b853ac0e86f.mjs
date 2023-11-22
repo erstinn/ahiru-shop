@@ -1,7 +1,7 @@
 // vite.config.js
 import { defineConfig } from "file:///ahirut/ahiru/codes/ahiru-shop/client/node_modules/vite/dist/node/index.js";
 import react from "file:///ahirut/ahiru/codes/ahiru-shop/client/node_modules/@vitejs/plugin-react/dist/index.mjs";
-var vite_config_default = defineConfig({
+let vite_config_default = defineConfig({
   plugins: [react()]
 });
 export {

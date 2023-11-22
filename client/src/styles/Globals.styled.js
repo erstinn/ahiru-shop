@@ -29,7 +29,7 @@ export const BaseButton = styled.button`
 
   border: 0.5px solid gray;
   border-radius: 2px;
-  justify-content: center;
+  place-content: center;
   max-height: 3rem;
   text-transform: uppercase;
   transition: 0.07s ease-in;
@@ -58,4 +58,13 @@ export const StyledCancelBtn = styled(BaseButton)`
 
 `
 
+export const BaseSelect = styled.select`
+  background-color: ${(props) => props.theme.colors.accent};
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: ${(props) => props.theme.fontSizes.med};
+  font-weight: ${(props) => props.theme.fontWeight.thin};
+`
 
+// export const BaseRadioBtn = styled.
