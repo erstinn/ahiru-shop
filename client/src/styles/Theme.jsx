@@ -16,13 +16,14 @@ const theme = {
         button_secondary: '',
         disabledButton: '#D1CFC3',
         extra_gray: '#c3bbaf',
+        extra_blue: '#3993b0',
     },
     fontSizes: {
         vsmall: "calc(4px + 0.4vw)",
         small: "calc(5px + 0.5vw)",
         med: "calc(6px + 0.5vw)",
-        large: "calc(7px + 0.7vw)",
-        slarge: "calc(10px + 2vw)",
+        large: "calc(9px + 1.5vw)",
+        slarge: "calc(10px + 2.5vw)",
         vlarge: "calc(10px + 5vw)",
     },
     fontWeight: {

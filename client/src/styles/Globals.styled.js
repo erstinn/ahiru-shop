@@ -1,5 +1,20 @@
 import styled from "styled-components";
+import {Link } from "react-router-dom";
 
+
+export const BorderedHeader = styled.h3`
+  border: none;
+  margin: 5rem 0 1rem 0;
+
+  &::after {
+    display: flex;
+    width: 100%;
+    content: '';
+    padding-top: 0.75rem;
+    border-bottom: 1px solid ${(props) => props.theme.colors.text};
+    opacity: 25%;
+  }
+`
 export const StyledInput = styled.input`
   border: none;
   border-bottom: 2px solid ${(props) => props.theme.colors.extra_gray};
@@ -9,7 +24,6 @@ export const StyledInput = styled.input`
   font-weight: ${(props) => props.theme.fontWeight.thin};
   height: 30px;
   width: 100%;
-  max-width: 500px;
 `
 
 
@@ -23,6 +37,20 @@ export const StyledWarningText = styled.h4`
   font-weight: ${(props) => props.theme.fontWeight.reg};  
 `
 
+export const BaseSecondaryContainer = styled.div`
+  display: grid;
+  padding-bottom: 3rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: ${(props) => props.theme.colors.bg_secondary};
+  
+  & .btn {
+    display: flex;
+    //random css
+    
+  }
+`
+
 export const BaseButton = styled.button`
   padding: 1rem;
   cursor: pointer;
@@ -32,7 +60,7 @@ export const BaseButton = styled.button`
   place-content: center;
   max-height: 3rem;
   text-transform: uppercase;
-  transition: 0.07s ease-in;
+  transition: 0.3s ease-out;
 
   &:hover {
     box-shadow: 0 3px 10px rgba(151, 151, 106, 0.44); 
@@ -42,8 +70,6 @@ export const BaseButton = styled.button`
 export const StyledConfirmBtn = styled(BaseButton)`
   color: ${(props) => props.theme.colors.text_secondary};
   background-color: ${(props) => props.theme.colors.confirm};
-
-
 `
 
 export const StyledDeleteBtn = styled(BaseButton)`
@@ -58,6 +84,14 @@ export const StyledCancelBtn = styled(BaseButton)`
 
 `
 
+export const StyledLink = styled(Link)`
+  color: ${(props) => props.theme.colors.extra_blue};
+  //color: red;
+  
+  &:visited {
+    color: ${(props) => props.theme.colors.extra_blue};
+  }
+`
 export const BaseSelect = styled.select`
   background-color: ${(props) => props.theme.colors.accent};
   padding: 1rem;

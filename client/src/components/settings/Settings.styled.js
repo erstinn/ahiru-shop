@@ -1,46 +1,27 @@
 import styled from "styled-components";
-import {BaseSelect, StyledCancelBtn} from "../../styles/Globals.styled.js";
+import {BaseSecondaryContainer, BaseSelect, StyledCancelBtn, StyledInput} from "../../styles/Globals.styled.js";
 
-export const StyledSettings = styled.div`
-  display: grid;
+export const StyledSettings = styled(BaseSecondaryContainer)`
   grid-template-columns: 0.25fr 0.75fr;
   margin: 3rem;
-  padding: 5rem 0 5rem 0;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  background-color: ${(props) => props.theme.colors.bg_secondary};
   place-content: center;
-
+  
+  
+  
 `
 
 export const StyledMainBody = styled.div`
   //margin-top: 5rem;
+  margin-right: 5rem;
   
   & .warning {
     color: ${(props) => props.theme.colors.warning};
-  }
-  
-  & h3 {
-    border: none;
-    margin: 5rem 0 1rem 0;
-    &::after {
-      display: flex;
-      width: 90%;
-      content: '';
-      padding-top: 0.75rem;
-      border-bottom: 1px solid ${(props) => props.theme.colors.text};
-      opacity: 25%;
-    }
   }
  
   & .btn-26 {
     width: 26px;
     height: 26px;
   }
-    
-    
-    
-    
 `
 
 export const StyledSidebar = styled.div` 
@@ -116,8 +97,13 @@ export const StyledSidebar = styled.div`
     color:  ${(props) => props.theme.colors.text_secondary};
     background-color: ${(props) => props.theme.colors.button};
   }
-  
 `
+
+export const StyledSettingsInput = styled(StyledInput)`
+  max-width: 500px;
+
+`
+
 export const StyledWarningBtn = styled.button`
   color: ${(props) => props.theme.colors.text_secondary};
   background-color: ${(props) => props.theme.colors.warning};

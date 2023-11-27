@@ -39,14 +39,13 @@ export const StyledDropdown = styled.div`
   display: flex;
   cursor: pointer;
 
-  & li {
+  & li, span {
     font-size: ${(props) => props.theme.fontSizes.small};
   }
 
   & .mini-img {
     width: 24px;
     height: 24px;
-    padding-right: 1px;
     top: 2px;
     position: relative;
   }

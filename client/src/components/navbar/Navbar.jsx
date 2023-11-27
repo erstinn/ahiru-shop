@@ -1,14 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyledDropdown, StyledNavbar} from './StyledNavbar.js'
 import {Link} from "react-router-dom";
 import {createPortal} from "react-dom";
-import LoginModal from "../modals/LoginModal.jsx";
+import LoginModal from "../authentication/LoginModal.jsx";
 
 const Navbar = () => {
+    const [isMobile, setMobile] = useState(false);
     const [showLoginModal, setLoginModal] = useState(false);
 
     const [cartDropdownVisible, setCartDropdownVisible] = useState(false);
     const [profileDropdownVisible, setProfileDropdownVisible] = useState(false);
+
+
+    useEffect(() => {
+        setMobile(window.innerWidth <= 1440)
+    }, [])
+
 
     const showDropdownContents = (profile) => {
         if (profile) {
@@ -50,14 +57,21 @@ const Navbar = () => {
                     <div className={`dropdown-profile-content ${profileDropdownVisible ? 'visible' : 'hidden'}`} onClick={() => showDropdownContents(true)}>
                         <li><img className='mini-img' src="/assets/icons8-settings-48.png" alt=""/>
                         <Link to='/settings'> Settings </Link></li>
-                        <li><img className='mini-img' src="/assets/icons8-login-48.png" alt=""/>
-                        <Link to='/login' onClick={() => setLoginModal(true)}> Login </Link></li>
-
-                        {showLoginModal && createPortal(
+                        <li>
+                            <img className='mini-img' src="/assets/icons8-login-48.png" alt=""/>
+                            {
+                                isMobile ? (<Link to='/login'> LoginZ </Link>)
+                                    : (<span onClick={() => setLoginModal(true)}> LoginA </span>)
+                            }
+                            {showLoginModal && createPortal(
                                 <LoginModal onClose={setLoginModal(false)} />
                                 , document.body
-                            )
-                        }
+                                )
+                            }
+
+                        </li>
+
+
 
                         <li><img className='mini-img' src="/assets/icons8-logout-48.png" alt=""/>
                         <Link to='/logout'> Logout </Link></li>

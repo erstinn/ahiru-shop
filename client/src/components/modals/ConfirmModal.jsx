@@ -6,8 +6,10 @@
             <div>
                 Confirm purchase?
 
-                <StyledCancelBtn>Cancel</StyledCancelBtn>
-                <StyledConfirmBtn>Confirm</StyledConfirmBtn>
+                <div className='btn-container'>
+                    <StyledCancelBtn>Cancel</StyledCancelBtn>
+                    <StyledConfirmBtn>Confirm</StyledConfirmBtn>
+                </div>
             </div>
         );
     };

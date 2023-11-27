@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {
     StyledCancelInputBtn,
+    StyledSettingsInput,
     StyledPaymentContainer,
     StyledPaymentMethodInput, StyledRadio,
     StyledWarningBtn
 } from "./Settings.styled.js";
-import {StyledInput} from "../../styles/Globals.styled.js";
 import {createPortal} from "react-dom";
 import DeleteAccountModal from "../modals/DeleteAccountModal.jsx";
 import RemoveAccountModal from "../modals/RemoveAccountModal.jsx";
+import {BorderedHeader} from "../../styles/Globals.styled.js";
 
 
 const SecuritySettings = () => {
@@ -21,11 +22,11 @@ const SecuritySettings = () => {
 
 
     //Form functions
-    const onSubmit = (event) => {
-        if (event.key === 'Enter') {
-            handleSubmit();
-        }
-    }
+    // const onSubmit = (event) => {
+    //     if (event.key === 'Enter') {
+    //         handleSubmit();
+    //     }
+    // }
 
 
     const paymentMethods = ['GCash', 'PayPal', 'AhiruCard', 'DuckCard'];
@@ -37,11 +38,11 @@ const SecuritySettings = () => {
 
     return (
         <div>
-            <h3>Security</h3>
+            <BorderedHeader>Security</BorderedHeader>
             <h4>Password</h4>
-            <StyledInput type="text" id="firstname" name="firstname"/>
+            <StyledSettingsInput type="text" id="firstname" name="firstname"/>
 
-            <h3>Linked billing accounts</h3>
+            <BorderedHeader>Linked billing accounts</BorderedHeader>
             <StyledPaymentContainer>
                 <div className='add-button'>
                     <img src="/assets/remove-50.png" className="btn-26" onClick={() => setDeletePaymentModal(true)} alt=""/>
@@ -83,14 +84,14 @@ const SecuritySettings = () => {
 
 
                     <label htmlFor="accountNo">Account No.:</label>
-                    <StyledInput type="text" id="accountNo" name="accountNo"/>
+                    <StyledSettingsInput type="text" id="accountNo" name="accountNo"/>
                     <StyledCancelInputBtn onClick={() => setAddPaymentInput(false)}>Cancel</StyledCancelInputBtn>
                 </StyledPaymentMethodInput>
                 }
             <h4>Username</h4>
             
             
-            <h3>Delete account</h3>
+            <BorderedHeader>Delete account</BorderedHeader>
             <p className='warning'>Permanently delete your account and your details.</p>
             <StyledWarningBtn onClick={() => setDeleteAccountModal(true)}>
                 Delete account

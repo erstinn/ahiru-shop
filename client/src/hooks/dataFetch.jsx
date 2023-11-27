@@ -23,13 +23,20 @@ export const GetAllAnimals = () => {
 export const GetAnimal = (id) => {
     const [animal, setAnimal] = useState({});
     useEffect(() => {
+        let ignore = false; //for latencies: https://react.dev/learn/synchronizing-with-effects#fetching-data
+
         fetch(`${animalsAPI}/${id}`)
             .then(response => response.json())
             .then(data => {
-                setAnimal(data);
+                if (!ignore)
+                    setAnimal(data);
             }).catch(e => {
             console.error('Error fetching animal', e)
         })
+
+        return () => {
+            ignore = true;
+        };
     }, [id]);
     return animal
 }
