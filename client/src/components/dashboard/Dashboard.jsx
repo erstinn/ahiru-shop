@@ -79,25 +79,25 @@ const Dashboard = () => {
     return (
         <>
             <StyledDashboard>
-                <h1>Ahiru Farm Catalogue</h1>
+                <h1>🐣 Ahiru Farm Catalogue 🐣</h1>
                 <h2>Ducks</h2>
                 <StyledCatalog>
-                <StyledArrow className='left' onClick={
-                    () => duckSlide === 1 ? handleDucksScroll('left', true) : handleDucksScroll('left', false)
-                }> {"<"} </StyledArrow>
+                    <StyledArrow className='left' onClick={
+                        () => duckSlide === 1 ? handleDucksScroll('left', true) : handleDucksScroll('left', false)
+                    }> {"<"} </StyledArrow>
 
-                    {ducksArray.map((item, index) => (
-                        <StyledCatalogItem key={index}>
-                            <Link to={`/animals/${item._id}`}>
-                            <img src={item.img} alt='/' ref={duckSlide === index ? ducksRef : null}/>
-                            <h3>{item.name}</h3>
-                            <p>{item.desc}</p>
-                            </Link>
-                        </StyledCatalogItem>
-                    ))}
-                    <StyledArrow className='right' onClick={
-                        () => ducksArray.length-1 === duckSlide ? handleDucksScroll('right', true) : handleDucksScroll('right', false)
-                    }> {">"} </StyledArrow>
+                        {ducksArray.map((item, index) => (
+                            <StyledCatalogItem key={index}>
+                                <Link to={`/animals/${item._id}`}>
+                                <img src={item.img} alt='/' ref={duckSlide === index ? ducksRef : null}/>
+                                <h3>{item.name}</h3>
+                                <p>{item.desc}</p>
+                                </Link>
+                            </StyledCatalogItem>
+                        ))}
+                        <StyledArrow className='right' onClick={
+                            () => ducksArray.length-1 === duckSlide ? handleDucksScroll('right', true) : handleDucksScroll('right', false)
+                        }> {">"} </StyledArrow>
                 </StyledCatalog>
 
                 <h2>Other Animals</h2>

@@ -4,12 +4,11 @@ import {
     StyledSettingsInput,
     StyledPaymentContainer,
     StyledPaymentMethodInput, StyledRadio,
-    StyledWarningBtn
+    StyledWarningBtn, StyledSettingHeader
 } from "./Settings.styled.js";
 import {createPortal} from "react-dom";
 import DeleteAccountModal from "../modals/DeleteAccountModal.jsx";
 import RemoveAccountModal from "../modals/RemoveAccountModal.jsx";
-import {BorderedHeader} from "../../styles/Globals.styled.js";
 
 
 const SecuritySettings = () => {
@@ -38,11 +37,11 @@ const SecuritySettings = () => {
 
     return (
         <div>
-            <BorderedHeader>Security</BorderedHeader>
+            <StyledSettingHeader>Security</StyledSettingHeader>
             <h4>Password</h4>
             <StyledSettingsInput type="text" id="firstname" name="firstname"/>
 
-            <BorderedHeader>Linked billing accounts</BorderedHeader>
+            <StyledSettingHeader>Linked billing accounts</StyledSettingHeader>
             <StyledPaymentContainer>
                 <div className='add-button'>
                     <img src="/assets/remove-50.png" className="btn-26" onClick={() => setDeletePaymentModal(true)} alt=""/>
@@ -91,7 +90,7 @@ const SecuritySettings = () => {
             <h4>Username</h4>
             
             
-            <BorderedHeader>Delete account</BorderedHeader>
+            <StyledSettingHeader>Delete account</StyledSettingHeader>
             <p className='warning'>Permanently delete your account and your details.</p>
             <StyledWarningBtn onClick={() => setDeleteAccountModal(true)}>
                 Delete account

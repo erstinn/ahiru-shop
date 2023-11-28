@@ -1,18 +1,17 @@
 import React from 'react';
-import {StyledSettingsInput} from "./Settings.styled.js";
-import {BorderedHeader} from "../../styles/Globals.styled.js";
+import {StyledSettingHeader, StyledSettingsInput} from "./Settings.styled.js";
 
 const GeneralSettings = () => {
     return (
         <div>
-            <BorderedHeader>Profile Settings</BorderedHeader>
+            <StyledSettingHeader>Profile Settings</StyledSettingHeader>
             <label htmlFor=""> <h4>Username</h4></label>
             <StyledSettingsInput type="text" id="username" name="username"/>
 
             <h4>Email</h4>
             <StyledSettingsInput type="text" id="username" name="username"/>
 
-            <BorderedHeader>User Details</BorderedHeader>
+            <StyledSettingHeader>User Details</StyledSettingHeader>
             <h4>First name</h4>
             <StyledSettingsInput type="text" id="firstname" name="firstname"/>
 

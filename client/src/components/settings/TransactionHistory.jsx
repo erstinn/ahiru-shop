@@ -1,10 +1,10 @@
 import React from 'react';
-import {BorderedHeader} from "../../styles/Globals.styled.js";
+import {StyledSettingHeader} from "./Settings.styled.js";
 
 const TransactionHistory = () => {
     return (
         <div>
-            <BorderedHeader>Order history</BorderedHeader>
+            <StyledSettingHeader>Order history</StyledSettingHeader>
         </div>
     );
 };

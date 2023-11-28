@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {StyledDropdown, StyledNavbar} from './StyledNavbar.js'
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {createPortal} from "react-dom";
 import LoginModal from "../authentication/LoginModal.jsx";
 
@@ -13,7 +13,7 @@ const Navbar = () => {
 
 
     useEffect(() => {
-        setMobile(window.innerWidth <= 1440)
+        setMobile(window.innerWidth <= 720)
     }, [])
 
 
@@ -35,8 +35,20 @@ const Navbar = () => {
 
     return (
         <StyledNavbar>
-            <li><Link to='/'> Dashboard </Link></li>
-            <li><Link to='/farm'> Farm </Link></li>
+            <li><NavLink to='/'
+                    className={`option 
+                        ${({ isActive, isPending }) => isPending ?
+                        "pending" : isActive ?
+                        "active" : null}` }>
+                Dashboard
+            </NavLink></li>
+            <li><NavLink to='/farm'
+                    className={`option 
+                        ${({ isActive, isPending }) => isPending ? 
+                        "pending" : isActive ?
+                        "active" : null}` }>
+                Farm
+            </NavLink></li>
 
 
             <div className="right-container">
@@ -63,14 +75,14 @@ const Navbar = () => {
                                 isMobile ? (<Link to='/login'> LoginZ </Link>)
                                     : (<span onClick={() => setLoginModal(true)}> LoginA </span>)
                             }
-                            {showLoginModal && createPortal(
-                                <LoginModal onClose={setLoginModal(false)} />
-                                , document.body
-                                )
-                            }
+
 
                         </li>
-
+                        {showLoginModal && createPortal(
+                            <LoginModal onClose={() => setLoginModal(false)} />
+                            , document.body
+                        )
+                        }
 
 
                         <li><img className='mini-img' src="/assets/icons8-logout-48.png" alt=""/>

@@ -5,12 +5,16 @@ export const StyledNavbar = styled.nav`
   display: flex;  
   place-items: center;
   padding: 1rem;
- 
+
+  & .option.active {
+    border-bottom: 3px solid ${(props) => props.theme.colors.button};
+  }
 
   & > li {
     color: ${(props) => props.theme.colors.text};
     font-size: ${(props) => props.theme.fontSizes.large};
-    margin: 1rem;
+    font-weight: ${(props) => props.theme.fontWeight.thin};
+    margin: 1rem 2rem 1rem 1rem;
   }
   & img {
     margin-left: auto;
@@ -62,11 +66,12 @@ export const StyledDropdown = styled.div`
   
   & .dropdown-profile-content {
     position: absolute;
-    top: 5.5rem;
+    top: 6.7rem;
     right: 2rem;
     border: 1px solid;
     border-radius: 10px;
     padding: 1rem;
+    z-index: 1;
   }
 
   & .dropdown-cart {

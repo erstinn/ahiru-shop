@@ -3,32 +3,36 @@ import {StyledAuthContainer, StyledGreeting, StyledRegBody, StyledRegBtn, Styled
 import { useForm } from 'react-hook-form';
 
 const Register = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
-
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = (data) => {
+        console.log(data);
+    };
 
     return (
         <StyledAuthContainer>
             <StyledGreeting>Register</StyledGreeting>
 
-            <StyledRegBody>
-                <label htmlFor="">Full name</label>
-                <StyledRegInput type='text' id='email' name='email' onChange={() => setEmail}/>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <StyledRegBody>
+                    <label>Full name
+                        <StyledRegInput />
+                    </label>
 
-                <label htmlFor="">E-mail</label>
-                <StyledRegInput type='text' id='email' name='email' onChange={() => setEmail}/>
+                    <label>E-mail
+                    <StyledRegInput />
+                    </label>
 
-                <label htmlFor="username">Username</label>
-                <StyledRegInput type='text' id='username' name='username'/>
+                    <label>Username
+                    <StyledRegInput />
+                    </label>
 
-                <label htmlFor="password">Password</label>
-                <StyledRegInput type='text' id='pasword' name='password'/>
+                    <label>Password
+                    <StyledRegInput />
+                    </label>
 
-                <StyledRegBtn>Sign up</StyledRegBtn>
-            </StyledRegBody>
+                    <StyledRegBtn type='submit'>Sign up</StyledRegBtn>
+                </StyledRegBody>
+            </form>
         </StyledAuthContainer>
     );
 };

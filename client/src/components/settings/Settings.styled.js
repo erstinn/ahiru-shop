@@ -1,13 +1,19 @@
 import styled from "styled-components";
-import {BaseSecondaryContainer, BaseSelect, StyledCancelBtn, StyledInput} from "../../styles/Globals.styled.js";
+import {
+    BaseSecondaryContainer,
+    BaseSelect,
+    BorderedHeader,
+    StyledCancelBtn,
+    StyledInput
+} from "../../styles/Globals.styled.js";
 
+export const StyledSettingHeader = styled(BorderedHeader) `
+  margin-top: 3rem;
+`
 export const StyledSettings = styled(BaseSecondaryContainer)`
   grid-template-columns: 0.25fr 0.75fr;
   margin: 3rem;
   place-content: center;
-  
-  
-  
 `
 
 export const StyledMainBody = styled.div`

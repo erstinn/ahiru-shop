@@ -4,7 +4,7 @@ import {Link } from "react-router-dom";
 
 export const BorderedHeader = styled.h3`
   border: none;
-  margin: 5rem 0 1rem 0;
+  //margin: 5rem 0 1rem 0;
 
   &::after {
     display: flex;
