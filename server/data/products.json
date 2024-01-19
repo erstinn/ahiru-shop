@@ -110,5 +110,54 @@
     "name": "Dorper Sheep",
     "desc": "Fluffy sheep with a curious demeanor, an adorable addition to your pasture or petting zoo.",
     "stock": 50
+  },
+  {
+    "type": "misc",
+    "img": "/misc/basil.png",
+    "name": "Basil",
+    "desc": "A fragrant herb commonly used in cooking, known for its fresh and slightly sweet flavor.",
+    "stock": 20
+  },
+  {
+    "type": "misc",
+    "img": "/misc/hay.png",
+    "name": "Hay",
+    "desc": "Dried grasses and legumes, commonly used as animal fodder or for decorative purposes.",
+    "stock": 15
+  },
+  {
+    "type": "misc",
+    "img": "/misc/milk.png",
+    "name": "Milk",
+    "desc": "A nutrient-rich liquid produced by mammals, commonly consumed as a beverage or used in cooking.",
+    "stock": 30
+  },
+  {
+    "type": "misc",
+    "img": "/misc/rosemary.png",
+    "name": "Rosemary",
+    "desc": "An aromatic herb with a piney flavor, often used in Mediterranean cuisine.",
+    "stock": 18
+  },
+  {
+    "type": "misc",
+    "img": "/misc/spice-set.png",
+    "name": "Spice-set",
+    "desc": "A collection of assorted spices, perfect for enhancing the flavors of your dishes.",
+    "stock": 25
+  },
+  {
+    "type": "misc",
+    "img": "/misc/star-anise.png",
+    "name": "Star-anise",
+    "desc": "A star-shaped spice with a licorice-like flavor, commonly used in cooking and beverages.",
+    "stock": 22
+  },
+  {
+    "type": "misc",
+    "img": "/misc/tomatoes.png",
+    "name": "Tomatoes",
+    "desc": "Red, juicy fruits commonly used in salads, sauces, and various culinary dishes.",
+    "stock": 28
   }
 ]

@@ -80,8 +80,6 @@ const SecuritySettings = () => {
                         <StyledRadio type="radio" id="duckcard" name="options" value="DuckCard" />
                     </form>
 
-
-
                     <label htmlFor="accountNo">Account No.:</label>
                     <StyledSettingsInput type="text" id="accountNo" name="accountNo"/>
                     <StyledCancelInputBtn onClick={() => setAddPaymentInput(false)}>Cancel</StyledCancelInputBtn>

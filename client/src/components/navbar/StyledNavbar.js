@@ -1,13 +1,31 @@
 import styled from 'styled-components';
 
+
 export const StyledNavbar = styled.nav`
   background-color: ${(props) => props.theme.colors.nav};
   display: flex;  
   place-items: center;
   padding: 1rem;
-
+  
+  
   & .option.active {
+    //border animation: https://stackoverflow.com/questions/26726436/css-bottom-border-transition-expand-from-middle
     border-bottom: 3px solid ${(props) => props.theme.colors.button};
+  }
+  
+  & .option:after {
+    content: '';
+    display: flex;
+    margin-right: auto;
+    
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+  & .option:hover:after {
+    width: 100%;
+    background: ${(props) => props.theme.colors.button};
   }
 
   & > li {

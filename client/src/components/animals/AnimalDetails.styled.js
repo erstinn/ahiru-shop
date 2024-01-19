@@ -3,7 +3,7 @@ import {BaseButton} from "../../styles/Globals.styled.js";
 
 export const StyledAnimal = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.7fr 1fr;
   margin: 3rem;
   padding: 5rem 0 5rem 0;
   border: 1px solid transparent;

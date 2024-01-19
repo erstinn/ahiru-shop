@@ -6,8 +6,9 @@ import helmet from "helmet";
 
 import connectDB from "./conf.js";
 //routes:
-import animalsRouter from "./routers/animals.js";
+import animalsRouter from "./routers/products.js";
 import usersRouter from "./routers/users.js";
+import productsRouter from "./routers/products.js";
 
 const app = express();
 config();
@@ -35,5 +36,5 @@ app.listen(PORT, () => {
 });
 
 //mount routes:
-app.use('/api/animals', animalsRouter);
+app.use('/api/products', productsRouter);
 app.use('/api/users', usersRouter);

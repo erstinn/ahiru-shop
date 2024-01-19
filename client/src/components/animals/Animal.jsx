@@ -7,14 +7,14 @@ import {
     StyledCounterButton,
     StyledCounter
 } from "./AnimalDetails.styled.js";
-import {GetAnimal} from "../../hooks/dataFetch.jsx";
+import {GetProduct} from "../../hooks/shop.jsx";
 
 const Animal = () => {
     //connection variables
     const [items, setItems] = useState(0);
     const params = useParams();
 
-    const retrievedAnimal = GetAnimal(params.id)
+    const retrievedAnimal = GetProduct(params.id)
     const [animal, setCurrentAnimal] = useState(retrievedAnimal);
     //todo implement cache
 

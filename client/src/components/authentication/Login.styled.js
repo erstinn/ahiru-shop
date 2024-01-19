@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {StyledModalContainer} from "../modals/Modal.styled.js";
 import {BaseSecondaryContainer, BorderedHeader, StyledConfirmBtn, StyledInput} from "../../styles/Globals.styled.js";
+import {device} from "../../styles/GlobalMedia.styled.js";
 
 
 export const StyledErrorText = styled.div`
@@ -14,9 +15,24 @@ export const StyledGreeting = styled(BorderedHeader)`
   padding-top: 1rem;
 `
 
+export const CenterDiv = styled.div`
+  display: grid;
+  place-items: center;
+`
+
 export const StyledAuthContainer = styled(BaseSecondaryContainer)`
-  margin: 5rem;
+  display: grid;
+  margin-top: 10rem;
+  margin-inline: 5rem;
   padding: 0 5rem 3rem 5rem;
+  
+  
+  @media only screen and ${device.laptop} {
+    width: 100%;
+    max-width: 75rem;
+  }
+
+  
 `
 
 // Login:
@@ -62,11 +78,16 @@ export const StyledLoginBtn = styled(StyledConfirmBtn)`
 
 // Register:
 export const StyledRegBody = styled(StyledLoginBody)`
-    
+  display: grid;
+    @media only screen and ${device.laptop} {
+      grid-template-columns: repeat(2, 0.5fr);
+      gap: 20px;
+    }
 `
 
 export const StyledRegBtn = styled(StyledConfirmBtn)`
   margin-top: 3rem;
+  width: 100%;
 `
 
 export const StyledRegInput = styled(StyledInput)`

@@ -56,7 +56,7 @@ export const BaseButton = styled.button`
   cursor: pointer;
 
   border: 0.5px solid gray;
-  border-radius: 2px;
+  border-radius: 5px;
   place-content: center;
   max-height: 3rem;
   text-transform: uppercase;

@@ -1,29 +1,33 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {StyledDashboard} from "./Dashboard.styled.js";
 import {StyledArrow, StyledCatalog, StyledCatalogItem} from "./Catalog.styled.js";
-// import {others, ducks} from "../extra/images.js";
 import { Link } from "react-router-dom";
 import { flushSync } from 'react-dom';
-import animal from "../animals/Animal.jsx";
-import {GetAllAnimals} from "../../hooks/dataFetch.jsx";
+import {GetAllProducts} from "../../hooks/shop.jsx";
 
 //flushSync apparently uncommon (https://react.dev/reference/react-dom/flushSync)
 //but apparently needed to update ref
 const Dashboard = () => {
-    const animals = GetAllAnimals();
-    const [othersArray, setOthersArray] = useState(animals.filter(item => item.type !== 'duck'));
-    const [ducksArray, setDucksArray] = useState(animals.filter(item => item.type === 'duck'));
+    const products = GetAllProducts();
+    console.log(products)
+    const [othersArray, setOthersArray] = useState(products.filter(item => item.type === 'others'));
+    const [ducksArray, setDucksArray] = useState(products.filter(item => item.type === 'duck'));
+    const [miscArray, setMiscArray] = useState(products.filter(item => item.type === 'misc'));
 
     useEffect(() => {
-        setOthersArray(animals.filter(item => item.type !== 'duck'));
-        setDucksArray(animals.filter(item => item.type === 'duck'));
-    }, [animals]);
+        setOthersArray(products.filter(item => item.type === 'others'));
+        setDucksArray(products.filter(item => item.type === 'duck'));
+        setMiscArray(products.filter(item => item.type === 'misc'));
+    }, [products]);
 
 
+    //Scroll:
     const [duckSlide, setDuckSlide] = useState(1);
     const [otherSlide, setOtherSlide] = useState(1);
+    const [miscSlide, setMiscSlide] = useState(1);
     const ducksRef = useRef(null);
     const othersRef = useRef(null);
+    const miscRef = useRef(null);
 
 
     //made separate func for each scroll since will have too many args for useState stuff
@@ -42,7 +46,6 @@ const Dashboard = () => {
                 } else {
                     setDuckSlide(duckSlide - 1);
                 }
-                console.log('duckslide',duckSlide);
             }
         });
         ducksRef.current.scrollIntoView({
@@ -75,6 +78,33 @@ const Dashboard = () => {
             inline: 'center'
         });
     }
+
+    const handleMiscScroll = (direction, reset) => {
+        flushSync(() => {
+            if (direction === 'right' && miscSlide <= othersArray.length - 1) {
+                setMiscSlide(miscSlide + 1);
+                if (reset) {
+                    setMiscSlide(1);
+                } else {
+                    setMiscSlide(miscSlide + 1);
+                }
+            }
+            else if (direction === 'left' && miscSlide >= 0) {
+                if (reset) {
+                    setMiscSlide(othersArray.length - 1);
+                } else {
+                    setMiscSlide(otherSlide - 1);
+                }
+            }
+        });
+        othersRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+        });
+    }
+
+
 
     return (
         <>
@@ -122,13 +152,24 @@ const Dashboard = () => {
 
                 <h2>Miscellaneous</h2>
                 <StyledCatalog>
-                    {ducksArray.map((item) => (
-                    <StyledCatalogItem key={item.id}>
-                        <img src={item.img} alt='/'/>   
-                        <h3>{item.name}</h3>
-                        <p>{item.desc}</p>
-                    </StyledCatalogItem>
+                    <StyledArrow className='left' onClick={
+                        () => duckSlide === 1 ? handleMiscScroll('left', true)
+                            : handleMiscScroll('left', false)
+                    }> {"<"} </StyledArrow>
+
+                    {miscArray.map((item, index) => (
+                        <StyledCatalogItem key={index}>
+                            <Link to={`/misc/${item._id}`}>
+                                <img src={item.img} alt='/' ref={miscSlide === index ? miscRef : null}/>
+                                <h3>{item.name}</h3>
+                                <p>{item.desc}</p>
+                            </Link>
+                        </StyledCatalogItem>
                     ))}
+                    <StyledArrow className='right' onClick={
+                        () => miscArray.length-1 === miscSlide ? handleMiscScroll('right', true)
+                            : handleMiscScroll('right', false)
+                    }> {">"} </StyledArrow>
                 </StyledCatalog>
             </StyledDashboard>
         </>

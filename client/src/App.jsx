@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {Theme} from './styles/Theme.jsx'
 import Dashboard from "./components/dashboard/Dashboard.jsx";
 import Animal from "./components/animals/Animal.jsx";
-import {Layout, SettingsLayout} from "./components/Layout.jsx";
+import {Layout, RegisterLayout, SettingsLayout} from "./components/Layout.jsx";
 import PreferencesSettings from "./components/settings/PreferencesSettings.jsx";
 import SecuritySettings from "./components/settings/SecuritySettings.jsx";
 import GeneralSettings from "./components/settings/GeneralSettings.jsx";
@@ -31,10 +31,10 @@ function App() {
                       <Route path='transactions' element={<TransactionHistory />} />
                    </Route>
                   <Route path='/login' element={<Login />} />
-                  <Route path='/register' element={<Register />} />
                   <Route path='/logout' element={<Dashboard />} />
-                  {/*<Route path='/' element={<Dashboard />} />*/}
                 </Route>
+                <Route path='register' element={<RegisterLayout />}> </Route>
+
             </Routes>
           </Theme>
 

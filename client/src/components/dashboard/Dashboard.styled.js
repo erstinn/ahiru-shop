@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const StyledDashboard = styled.div`
     margin: 5rem;
   
-  & h2, h1 {
-    margin-inline: 6rem;
+  & h1 {
+    text-align: center;
   }
   
   & > h2 {
     font-weight: ${(props) => props.theme.fontWeight.thin};
-    //margin: 5rem 0 2rem 6rem;
+    margin: 8rem 0 4rem 6rem;
   }
 
   & h3 {

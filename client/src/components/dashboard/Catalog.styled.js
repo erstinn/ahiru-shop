@@ -7,7 +7,6 @@ export const StyledCatalog = styled.div`
   grid-auto-flow: column;
   grid-auto-columns: 27%; //suggested not to do numbers divisible by 100 to easily see that content overflow 
   place-items: center;
-  margin-inline: 5rem;
   overflow-x: auto; //puts the scroll on the div
   overscroll-behavior: contain; //contains scroll inside the div so you dont scroll the whole website instead
   scroll-snap-align: start; //snap thingy when you scroll esp on mobile
@@ -16,7 +15,7 @@ export const StyledCatalog = styled.div`
 `
 
 export const StyledCatalogItem = styled.div`
-  //max-height: 20rem; //todo put constraint on small screens
+  height: 95%;
   border: 1px solid transparent;
   border-radius: 15px;
   background-color: ${(props) => props.theme.colors.secondary};
@@ -30,7 +29,14 @@ export const StyledCatalogItem = styled.div`
     inline-size: 100%; //logical property for width
     aspect-ratio: 4/3;
     object-fit: cover; //crops images
+    height: 70%;
     cursor: pointer;
+  }
+  
+  & > p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
   }
 `
 export const StyledCatalogGroup = styled.div`
@@ -40,23 +46,27 @@ export const StyledCatalogGroup = styled.div`
 `
 
 export const StyledArrow = styled.div`
-  height: 46px;
-  width: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  width: 64px;
   position: absolute;
-  text-align: center;
   line-height: 46px;
   background: ${(props) => props.theme.colors.primary};
-  border-radius: 50%;
+  border-radius: 50px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: ${(props) => props.theme.fontSizes.large};
+  font-weight: ${(props) => props.theme.fontWeight.thin};
+  
   
   &.left {
-    left: 5%;
+    left: 2%;
     filter: drop-shadow(0 0 50px 100px black);
     
   }
   &.right {
-    right: 5%;
+    right: 2%;
     filter: drop-shadow(0 0 50px 100px black);
     
   }

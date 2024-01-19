@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const AnimalSchema = new mongoose.Schema(
+const ProductSchema = new mongoose.Schema(
     {
         type : {
             type: 'String',
@@ -41,5 +41,5 @@ const AnimalSchema = new mongoose.Schema(
 //     }
 // )
 
-const Animal = mongoose.model('Animal', AnimalSchema);
-export default Animal;
+const Product = mongoose.model('Product', ProductSchema);
+export default Product;

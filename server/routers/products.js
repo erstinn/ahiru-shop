@@ -1,32 +1,31 @@
 import {Router} from "express";
-import Animal from '../models/Animal.js';
-import {getAnimal} from "../middleware/animals.js";
+import Product from '../models/Product.js';
+import {getProduct} from "../middleware/product.js";
 const router = Router ();
 
 router.get('/', async (req,res) => {
     try {
-        const animals = await Animal.find();
-        // console.log('this is Farm output:', animals);
-        res.json(animals)
+        const products = await Product.find();
+        res.json(products)
 
     } catch (e) {
         console.log(e);
     }
 });
+
 router.get('/:id', async (req, res) => {
     try {
-        const animal = await Animal.findById(req.params.id)
-        if (animal === null)
+        const product = await Product.findById(req.params.id)
+        if (product === null)
             return res.status(404).json({ message: 'Animal not found' });
-        // console.log(animal, 'shunaho');
-        res.json(animal);
+        res.json(product);
     } catch (e) {
     }
 });
 
-router.delete('/:id', getAnimal, async(req, res) => {
+router.delete('/:id', getProduct, async(req, res) => {
     try {
-
+        // const product
     }   catch (e) {
         
     }

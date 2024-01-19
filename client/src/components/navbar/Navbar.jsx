@@ -86,7 +86,7 @@ const Navbar = () => {
 
 
                         <li><img className='mini-img' src="/assets/icons8-logout-48.png" alt=""/>
-                        <Link to='/logout'> Logout </Link></li>
+                        <Link to='/register'> Logout </Link></li>
                     </div>
                 </StyledDropdown>
 
