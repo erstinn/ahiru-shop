@@ -6,10 +6,10 @@
     "salt": "",
     "firstName": "Sarah",
     "lastName": "Johnson",
-    "creditNum": "1111-2222-3333-4444",
+    "credit": "1111-2222-3333-4444",
     "address": "789 Oak Ave, Town, Country",
     "paymentMethod": {
-      "type": "Credit Card",
+      "method": "Credit Card",
       "expirationDate": "12/25"
     },
     "profilePic": ""
@@ -21,10 +21,10 @@
     "salt": "",
     "firstName": "Michael",
     "lastName": "Brown",
-    "creditNum": "5555-6666-7777-8888",
+    "credit": "5555-6666-7777-8888",
     "address": "321 Pine St, City, Country",
     "paymentMethod": {
-      "type": "PayPal",
+      "method": "PayPal",
       "email": "michael.brown@example.com"
     },
     "profilePic": ""
@@ -36,10 +36,10 @@
     "salt": "",
     "firstName": "Emily",
     "lastName": "Wilson",
-    "creditNum": "9999-8888-7777-6666",
+    "credit": "9999-8888-7777-6666",
     "address": "456 Elm St, Town, Country",
     "paymentMethod": {
-      "type": "Debit Card",
+      "method": "Debit Card",
       "expirationDate": "08/24"
     },
     "profilePic": ""
@@ -51,10 +51,10 @@
     "salt": "",
     "firstName": "Daniel",
     "lastName": "Lee",
-    "creditNum": "4444-3333-2222-1111",
+    "credit": "4444-3333-2222-1111",
     "address": "987 Maple Ave, City, Country",
     "paymentMethod": {
-      "type": "Bank Transfer",
+      "method": "Bank Transfer",
       "accountNumber": "12345678"
     },
     "profilePic": ""
@@ -66,10 +66,10 @@
     "salt": "",
     "firstName": "Olivia",
     "lastName": "Taylor",
-    "creditNum": "7777-8888-9999-0000",
+    "credit": "7777-8888-9999-0000",
     "address": "543 Elm St, Town, Country",
     "paymentMethod": {
-      "type": "Credit Card",
+      "method": "Credit Card",
       "expirationDate": "03/27"
     },
     "profilePic": "",
@@ -85,10 +85,10 @@
     "salt": "",
     "firstName": "Ethan",
     "lastName": "Martinez",
-    "creditNum": "1111-9999-8888-6666",
+    "credit": "1111-9999-8888-6666",
     "address": "789 Oak Ave, City, Country",
     "paymentMethod": {
-      "type": "Credit Card",
+      "method": "Credit Card",
       "expirationDate": "09/23"
     },
     "profilePic": ""
@@ -100,10 +100,10 @@
     "salt": "",
     "firstName": "Ava",
     "lastName": "Hernandez",
-    "creditNum": "5555-4444-3333-2222",
+    "credit": "5555-4444-3333-2222",
     "address": "123 Main St, Town, Country",
     "paymentMethod": {
-      "type": "PayPal",
+      "method": "PayPal",
       "email": "ava.hernandez@example.com"
     },
     "profilePic": ""
@@ -115,10 +115,10 @@
     "salt": "",
     "firstName": "Noah",
     "lastName": "Garcia",
-    "creditNum": "9999-1111-2222-8888",
+    "credit": "9999-1111-2222-8888",
     "address": "987 Maple Ave, City, Country",
     "paymentMethod": {
-      "type": "Debit Card",
+      "method": "Debit Card",
       "expirationDate": "11/26"
     },
     "profilePic": ""

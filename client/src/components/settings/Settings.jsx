@@ -6,8 +6,8 @@ const Settings = () => {
         <StyledSettings>
             <StyledSidebar>
                 <div className='profile-section'>
-                    <img src="/assets/profile.png" alt=""/>
-                        <img className="add-button" src="/assets/icons8-add-48.png" alt=""/>
+                    <img src="/assets/icons/profile.png" alt=""/>
+                        <img className="add-button" src="/assets/icons/icons8-add-48.png" alt=""/>
                 </div>
 
                 <div className="options-nav">

@@ -5,6 +5,9 @@ const ProductSchema = new mongoose.Schema(
         type : {
             type: 'String',
             required: true,
+            enum : {
+                values: ['duck', 'others', 'misc']
+            }
         },
         img:{
             type: 'String',

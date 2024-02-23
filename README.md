@@ -56,3 +56,5 @@
 - [scrollbar](https://www.youtube.com/watch?v=lvKK2fs6h4I)
 
 - [carousel logic reference](https://react.dev/learn/manipulating-the-dom-with-refs#challenges)
+
+- [translation guide](https://medium.com/@iamusamasattar/how-to-add-language-translation-in-mern-application-d55a246178c8)

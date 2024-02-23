@@ -9,7 +9,7 @@ export const GetAllProducts = async () => {
         fetch(productsAPI)
             .then(response => response.json())
             .then(data => {
-                console.log('all animals',data);
+                console.log('all products',data);
                 setProducts(data);
             })
             .catch(error => {

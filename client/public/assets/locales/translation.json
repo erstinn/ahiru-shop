@@ -1,0 +1,43 @@
+{
+  "en":{
+    "greetingHeader": "Hello, ",
+    "intropng" : "introduction.png",
+    "lightMode" : "Light Mode",
+    "darkMode" : "Dark Mode",
+    "langLabel" : "Language",
+    "language" : "English",
+    "language2" : "Japanese",
+    "projects" : "Projects",
+    "hobbies" : "Hobbies",
+    "techStack" : "Tech Stack",
+    "done" : "done",
+    "inProgress" : "in progress",
+
+    "cancel": "Cancel",
+    "register": "Register",
+    "login": "login",
+    "logout": "Logout",
+    "return": "Back"
+  },
+  "jp":{
+    "greetingHeader": "こんにちは、",
+    "intropng" : "自己紹介.png",
+    "lightMode" : "ライトモード",
+    "darkMode" : "ダークモード",
+    "langLabel" : "言語",
+    "language" : "日本語",
+    "language2" : "英語",
+    "projects" : "プロジェクト",
+    "hobbies" : "趣味など",
+    "techStack": "技術スタック",
+    "done": "完了",
+    "inProgress": "実装中",
+
+
+    "cancel": "キャンセル",
+    "register": "サインアップ",
+    "login": "ログイン",
+    "logout": "ログアウト",
+    "return": "戻る"
+  }
+}

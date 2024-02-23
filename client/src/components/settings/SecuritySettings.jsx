@@ -44,7 +44,7 @@ const SecuritySettings = () => {
             <StyledSettingHeader>Linked billing accounts</StyledSettingHeader>
             <StyledPaymentContainer>
                 <div className='add-button'>
-                    <img src="/assets/remove-50.png" className="btn-26" onClick={() => setDeletePaymentModal(true)} alt=""/>
+                    <img src="/assets/icons/remove-50.png" className="btn-26" onClick={() => setDeletePaymentModal(true)} alt=""/>
                     {showDeletePaymentModal && createPortal(
                           <RemoveAccountModal onClose={() => setDeletePaymentModal(false)}/>,
                             document.body
@@ -59,7 +59,7 @@ const SecuritySettings = () => {
 
             { !showAddPaymentInput &&
                 <StyledPaymentContainer>
-                    <div className='add-button'><img src="/assets/add-50.png" alt="" className='btn-26' onClick={() => setAddPaymentInput(true)}/></div>
+                    <div className='add-button'><img src="/assets/icons/add-50.png" alt="" className='btn-26' onClick={() => setAddPaymentInput(true)}/></div>
                     <div className='add-title'> <h4> Add mode of payment</h4> </div>
                 </StyledPaymentContainer>
             }

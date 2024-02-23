@@ -54,23 +54,23 @@ const Navbar = () => {
             <div className="right-container">
 
                 <StyledDropdown className="dropdown-cart" >
-                    <img src="/assets/cart.png" onClick={() => showDropdownContents(false)} alt="🔻"/>
+                    <img src="/assets/icons/cart.png" onClick={() => showDropdownContents(false)} alt="🔻"/>
                     <div className={`dropdown-cart-content ${cartDropdownVisible ? 'visible' : 'hidden'}`}>
                         <h3>My Farm</h3>
                         <button>
-                            <img className='mini-img' src="/assets/add-to-cart.png" alt=""/>
+                            <img className='mini-img' src="/assets/icons/add-to-cart.png" alt=""/>
                         </button>
 
                     </div>
                 </StyledDropdown>
 
                 <StyledDropdown className="dropdown-profile" >
-                    <img src="/assets/profile.png" onClick={() => showDropdownContents(true)} alt="🔻"/>
+                    <img src="/assets/icons/profile.png" onClick={() => showDropdownContents(true)} alt="🔻"/>
                     <div className={`dropdown-profile-content ${profileDropdownVisible ? 'visible' : 'hidden'}`} onClick={() => showDropdownContents(true)}>
-                        <li><img className='mini-img' src="/assets/icons8-settings-48.png" alt=""/>
+                        <li><img className='mini-img' src="/assets/icons/icons8-settings-48.png" alt=""/>
                         <Link to='/settings'> Settings </Link></li>
                         <li>
-                            <img className='mini-img' src="/assets/icons8-login-48.png" alt=""/>
+                            <img className='mini-img' src="/assets/icons/icons8-login-48.png" alt=""/>
                             {
                                 isMobile ? (<Link to='/login'> LoginZ </Link>)
                                     : (<span onClick={() => setLoginModal(true)}> LoginA </span>)
@@ -85,7 +85,7 @@ const Navbar = () => {
                         }
 
 
-                        <li><img className='mini-img' src="/assets/icons8-logout-48.png" alt=""/>
+                        <li><img className='mini-img' src="/assets/icons/icons8-logout-48.png" alt=""/>
                         <Link to='/register'> Logout </Link></li>
                     </div>
                 </StyledDropdown>

@@ -6,7 +6,6 @@ import helmet from "helmet";
 
 import connectDB from "./conf.js";
 //routes:
-import animalsRouter from "./routers/products.js";
 import usersRouter from "./routers/users.js";
 import productsRouter from "./routers/products.js";
 
@@ -25,7 +24,7 @@ app.use(cors()); //allow reqs from any origin
 
 // Define a route for the home page
 app.get('/', (req, res) => {
-    res.send('Hello, Express!');
+    res.send('');
 });
 
 
