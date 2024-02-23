@@ -1,9 +1,8 @@
 {
   "en":{
-    "greetingHeader": "Hello, ",
-    "intropng" : "introduction.png",
-    "lightMode" : "Light Mode",
-    "darkMode" : "Dark Mode",
+    "title": "Ahiru Shop",
+    "lightMode" : "Light mode",
+    "darkMode" : "Dark mode",
     "langLabel" : "Language",
     "language" : "English",
     "language2" : "Japanese",
@@ -13,13 +12,28 @@
     "done" : "done",
     "inProgress" : "in progress",
 
+    "type": "Type",
+    "stock": "Stock",
+
+    "dashboard" : "Dashboard",
+    "description": "Description",
+    "farm" : "Farm",
+    "ownedanimals": "Owned animals",
+    "addtocart": "Add to cart",
+    "buy": "Checkout",
+    
+    "welcomeback" : "Welcome back!",
+    "settings" : "Settings",
+    "general": "General",
+    "wishlist": "Wishlist",
     "cancel": "Cancel",
     "register": "Register",
-    "login": "login",
+    "login": "Login",
     "logout": "Logout",
     "return": "Back"
   },
-  "jp":{
+  "jp": {
+    "title": "アヒルショップ",
     "greetingHeader": "こんにちは、",
     "intropng" : "自己紹介.png",
     "lightMode" : "ライトモード",
@@ -33,11 +47,29 @@
     "done": "完了",
     "inProgress": "実装中",
 
+    "type": "種類",
+    "stock": "在庫",
 
+    "dashboard" : "ダッシュボード",
+    "description": "デスクリプション",
+    "farm" : "農場",
+    "ownedanimals" : "もってる家畜",
+    "addtocart": "カートに追加",
+    "buy": "今すぐ買う",
+
+    "duckcard": "アヒルカード",
+    "paypal": "ペイパル",
+
+    "welcomeback": "おかえりなさい",
+    "settings": "設定",
+    "wishlist": "ウィッシュリスト",
     "cancel": "キャンセル",
     "register": "サインアップ",
     "login": "ログイン",
     "logout": "ログアウト",
+    "email": "メール",
+    "username": "ユーザー",
+    "password": "パスワード",
     "return": "戻る"
   }
 }

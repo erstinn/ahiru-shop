@@ -1,15 +1,23 @@
+<h1> 🐥 Ahiru Shop 🐥 </h1>
+Extremely simple web application
 
-<h3>設定</h3>
+**Focuses on:**
+
+
+- Animation and best practices for HTML/CSS
+- Best practices for authentication/authorization in backend and frontend
+- Hosted on Docker locally for easy cleanup and configuration
+
+<h3>⚙️ Setup / 設定</h3>
 1. docker-compose.yaml `docker-compose up
 2. data to mongo: [farm](server/data/farm.json), [users](server/data/users.json)
 
-<h3> 警告 </h3>
+<h3> ⚠️ Warning / 警告 </h3>
 
 - change `.env` variables if changing ports 
 
 
-
-<h3>ahiru notes</h3>
+<h3>TODO Notes / やることリスト</h3>
 
 - TODO
 
@@ -46,7 +54,7 @@
 
 
 
-<h3>参考文献</h3>
+<h3>References / 参考文献</h3>
 - icons from [icons8](icons8.com)
 
 - photos from [pexels](https://www.pexels.com/)

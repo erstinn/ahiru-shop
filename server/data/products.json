@@ -2,7 +2,10 @@
   {
     "type": "duck",
     "img": "/animals/duck1.png",
-    "name": "Mallard Duck",
+    "name": {
+      "en": "Mallard Duck",
+      "jp": "真鴨"
+    },
     "desc": {
       "en": "Adorable yellow duckling, perfect as a pet or gift.",
       "jp": "プレゼントにピッタリ可愛い黄色いアヒル"
@@ -12,7 +15,10 @@
   {
     "type": "duck",
     "img": "/animals/duck2.png",
-    "name": "Pekin Duck",
+    "name": {
+      "en": "Peking Duck",
+      "jp": " 北京ダック"
+    },
     "desc": {
       "en": "Pair of adult ducks, great for breeding or pond decoration.",
       "jp": "美味しいカモの一対、繁殖できるや池のデコレーションにちょうど使える"
@@ -22,7 +28,10 @@
   {
     "type": "duck",
     "img": "/animals/duck3.png",
-    "name": "Muscovy Duck",
+    "name": {
+      "en": "Muscovy Duck",
+      "jp": "ノバリケン"
+    },
     "desc": {
       "en": "Beautiful white duck, known for its elegance and grace.",
       "jp": "白くて美しいカモ、優雅で優美として知られている"
@@ -32,7 +41,10 @@
   {
     "type": "duck",
     "img": "/animals/duck4.png",
-    "name": "Khaki Campbell Duck",
+    "name": {
+      "en": "Khaki Campbell Duck",
+      "jp": "カーキキャンベル"
+    },
     "desc": {
       "en": "Cute duckling family, an adorable addition to any farm or garden.",
       "jp": "農場と庭にすぐ育てれる可愛いアヒルの家族"
@@ -42,7 +54,10 @@
   {
     "type": "duck",
     "img": "/animals/duck5.png",
-    "name": "Runner Duck",
+    "name": {
+      "en": "Runner Duck",
+      "jp": "ランナーダック"
+    },
     "desc": {
       "en": "Assorted flock of ducks, perfect for starting or expanding your own duck farm.",
       "jp": "種類が多くアヒルの群れ、アヒル牧場をすぐ増やせる"
@@ -53,7 +68,10 @@
   {
     "type": "others",
     "img": "/animals/rabbit1.png",
-    "name": "Holland Lop Rabbit",
+    "name": {
+      "en": "Holland Lop Rabbit",
+      "jp": "ホーランドロップ"
+    },
     "desc": {
       "en": "Cute and fluffy rabbit, perfect as a pet or for animal lovers.",
       "jp": "ふわふわ可愛いペットになれるウサギ。"
@@ -63,7 +81,10 @@
   {
     "type": "others",
     "img": "/animals/rooster.png",
-    "name": "Barred Rock Rooster",
+    "name": {
+      "en": "Barred Rock Rooster",
+      "jp": "バードロックルースター"
+    },
     "desc": {
       "en": "Colorful and vibrant rooster, adds a touch of farm charm to any setting.",
       "jp": " チャーミングと鮮やかなカラフルおんどり。"
@@ -73,18 +94,23 @@
   {
     "type": "others",
     "img": "/animals/hen.png",
-    "name": "Rhode Island Red Hen",
+    "name": {
+      "en": "Rhode Island Red Hen",
+      "jp": "ロードアイランドレッド"
+    },
     "desc": {
       "en": "Friendly and productive hen, provides fresh eggs for your breakfast.",
       "jp": "すぐ友達になれるめんどり。新鮮な朝ごはんの卵もらえる"
     },
-    "desc": 
     "stock": 63
   },
   {
     "type": "others",
     "img": "/animals/horse1.png",
-    "name": "Arabian Horse",
+    "name": {
+      "en": "Arabian Horse", 
+      "jp": "アラブ種"
+    },
     "desc": {
       "en": "Elegant and majestic horse, ideal for horseback riding or equestrian enthusiasts.",
       "jp": "美しくて鼻が多き馬"
@@ -94,7 +120,10 @@
   {
     "type": "others",
     "img": "/animals/horse2.png",
-    "name": "Quarter Horse",
+    "name": {
+      "en": "Quarter Horse",
+      "jp": "クォーターホース"
+    },
     "desc": {
       "en": "Graceful horse with a stunning coat, a beautiful addition to any ranch or stable.",
       "jp": "淑やかなつるつるコートしてる馬。綺麗に牧場につけれる。"
@@ -104,7 +133,10 @@
   {
     "type": "others",
     "img": "/animals/chick1.png",
-    "name": "Buff Orpington Chick",
+    "name": {
+      "en": "Buff Orpington Chick",
+      "jp": "バフ・オーピントン・チック" 
+    },
     "desc": {
       "en": "Adorable and chirpy chick, great for educational purposes or as a classroom pet.",
       "jp": "ちっちゃくて可愛いテンション高いアヒル。学校にも使えて勉強にできるアヒル教室ペット。"
@@ -114,7 +146,10 @@
   {
     "type": "others",
     "img": "/animals/chick2.png",
-    "name": "Silkie Chick",
+    "name": {
+      "en": "Silkie Chick",
+      "jp": "シルキーチック"
+    },
     "desc": {
       "en": "Fluffy baby chick, a delightful gift for children or a charming addition to your farm.",
       "jp": "可愛くてふわふわなアヒル。プレゼントに子供にあげれると農場にすぐつけれるアヒル。"
@@ -124,20 +159,26 @@
   {
     "type": "others",
     "img": "/animals/cow1.png",
-    "name": "Holstein Cow",
+    "name": {
+      "en": "Holstein Cow",
+      "jp": "ホルスタイン"
+    },
     "desc": {
       "en": "Gentle and docile cow, perfect for dairy production or as a friendly companion.",
-      "jp": "酪農生産にいっぱい使える大人しい牛"//gomen
+      "jp": "酪農生産にいっぱい使える大人しい牛"
     },
     "stock": 64
   },
   {
     "type": "others",
     "img": "/animals/cow2.png",
-    "name": "Angus Cow",
+    "name": {
+      "en": "Angus Cow",
+      "jp": "アンガス牛"
+    },
     "desc": {
       "en": "Strong and sturdy cow, an essential part of any livestock farm or cattle operation.",
-      "jp": "強い逞しい牛、農場に一番必要な家畜" //gomen
+      "jp": "強い逞しい牛、農場に一番必要な家畜"
     },
   
     "stock": 22
@@ -145,7 +186,10 @@
   {
     "type": "others",
     "img": "/animals/sheep1.png",
-    "name": "Suffolk Sheep",
+    "name": {
+      "en": "Suffolk Sheep",
+      "jp": "サフォーク羊"
+    },
     "desc": {
       "en": "Soft and woolly sheep, provides cozy wool and brings a peaceful atmosphere to your farm.",
       "jp": ""
@@ -155,7 +199,10 @@
   {
     "type": "others",
     "img": "/animals/sheep2.png",
-    "name": "Dorper Sheep",
+    "name": {
+      "en": "Dorper Sheep",
+      "jp": "ドーパーシープ"
+    },
     "desc": {
       "en": "Fluffy sheep with a curious demeanor, an adorable addition to your pasture or petting zoo.",
       "jp": "農場やふれあい動物園にピッタリ参加できる、奇妙で可愛らしいふわふわな羊。"
@@ -165,17 +212,23 @@
   {
     "type": "misc",
     "img": "/misc/basil.png",
-    "name": "Basil",
+    "name": {
+      "en": "Basil",
+      "jp": "バジル"
+    },
     "desc": {
       "en": "A fragrant herb commonly used in cooking, known for its fresh and slightly sweet flavor.",
-      "jp": "料理にいっぱい使われる。少し甘い味と香ばしいハーブ。"
+      "jp": "主に料理で使われる香り高いハーブ。新鮮でほんのり甘い風味か特徴。"
     },
     "stock": 20
   },
   {
     "type": "misc",
     "img": "/misc/hay.png",
-    "name": "Hay",
+    "name": {
+      "en": "Hay",
+      "jp": "乾草"
+    },
     "desc": {
       "en": "Dried grasses and legumes, commonly used as animal fodder or for decorative purposes.",
       "jp": "豆や乾燥した草。デコレーションや餌に使える。"
@@ -185,17 +238,23 @@
   {
     "type": "misc",
     "img": "/misc/milk.png",
-    "name": "Milk",
+    "name": {
+      "en": "Milk",
+      "jp": "ミルク"
+    },
     "desc": {
       "en": "A nutrient-rich liquid produced by mammals, commonly consumed as a beverage or used in cooking.",
-      "jp": "哺乳動物からのすごくヘルシーな液体。飲めれるや料理によく使えれる。"
+      "jp": "家畜からとれる栄養豊富な液体。主に飲み物や料理の材料として用いられる。"
     },
     "stock": 30
   },
-  {
+  { 
     "type": "misc",
     "img": "/misc/rosemary.png",
-    "name": "Rosemary",
+    "name": {
+      "en": "Rosemary",
+      "jp": "ローズマリー" 
+    },
     "desc": {
       "en": "An aromatic herb with a piney flavor, often used in Mediterranean cuisine.",
       "jp": "地中海料理によく使われる松のような香ばしいハーブ。"
@@ -205,17 +264,23 @@
   {
     "type": "misc",
     "img": "/misc/spice-set.png",
-    "name": "Spice-set",
+    "name": {
+      "en": "Spice-set", 
+      "jp": "香辛料"
+    },
     "desc": {
       "en": "A collection of assorted spices, perfect for enhancing the flavors of your dishes.",
-      "jp": "料理の味を磨く様々なスパイスのコレクション。"
+      "jp": "様々な香辛料の詰め合わせ。料理の腕を磨くのにもってこい。"
     },
     "stock": 25
   },
   {
     "type": "misc",
     "img": "/misc/star-anise.png",
-    "name": "Star-anise",
+    "name": {
+      "en": "Star-anise", 
+      "jp": "八角" 
+    },
     "desc": {
       "en": "A star-shaped spice with a licorice-like flavor, commonly used in cooking and beverages.",
       "jp": "星の形と似てるスパイス。よく料理や飲み物に使えれるリコリスみたいな味。"
@@ -225,10 +290,13 @@
   {
     "type": "misc",
     "img": "/misc/tomatoes.png",
-    "name": "Tomatoes",
+    "name": {
+      "en": "Tomatoes",
+      "jp": "トマト"
+    },
     "desc": {
       "en": "Red, juicy fruits commonly used in salads, sauces, and various culinary dishes.",
-      "jp": "サラダとソースや色んな料理に使えれる赤かいジューシートマト。"
+      "jp": "赤くてみずみずしい果実。サラダやソース等さまざまな料理に用いられる。"
     },
     "stock": 28
   }

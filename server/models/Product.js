@@ -14,12 +14,24 @@ const ProductSchema = new mongoose.Schema(
             default: '',
         },
         name : {
-            type: 'String',
-            required: true,
-            unique: true
+            en : {
+                type: 'String',
+                required: true,
+                unique: true
+            } ,
+            jp: {
+                type: 'String',
+                required: true,
+                unique: true
+            }
         },
         desc : {
-            type: 'String',
+            en : {
+                type: 'String',
+            },
+            jp: {
+                type: 'String',
+            }
         },
         stock : {
             type: 'Number',
