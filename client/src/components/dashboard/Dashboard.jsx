@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useRef, useEffect, useContext} from 'react';
 import {StyledDashboard} from "./Dashboard.styled.js";
 import {StyledArrow, StyledCatalog, StyledCatalogItem} from "./Catalog.styled.js";
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ import {GetAllProducts} from "../../hooks/shop.jsx";
 //but apparently needed to update ref
 const Dashboard = () => {
     const products = GetAllProducts();
-    console.log(products)
+    // console.log(products, 'nksand')
     const [othersArray, setOthersArray] = useState(products.filter(item => item.type === 'others'));
     const [ducksArray, setDucksArray] = useState(products.filter(item => item.type === 'duck'));
     const [miscArray, setMiscArray] = useState(products.filter(item => item.type === 'misc'));
@@ -120,8 +120,8 @@ const Dashboard = () => {
                             <StyledCatalogItem key={index}>
                                 <Link to={`/animals/${item._id}`}>
                                 <img src={item.img} alt='/' ref={duckSlide === index ? ducksRef : null}/>
-                                <h3>{item.name}</h3>
-                                <p>{item.desc}</p>
+                                <h3>{item.name.en}</h3>
+                                <p>{item.desc.en}</p>
                                 </Link>
                             </StyledCatalogItem>
                         ))}
@@ -140,8 +140,8 @@ const Dashboard = () => {
                         <StyledCatalogItem key={index}>
                             <Link to={`/animals/${item._id}`}>
                             <img src={item.img} alt='/' ref={otherSlide === index ? othersRef : null}/>
-                            <h3>{item.name}</h3>
-                            <p>{item.desc}</p>
+                            <h3>{item.name.en}</h3>
+                            <p>{item.desc.en}</p>
                             </Link>
                         </StyledCatalogItem>
                     ))}
@@ -161,8 +161,8 @@ const Dashboard = () => {
                         <StyledCatalogItem key={index}>
                             <Link to={`/misc/${item._id}`}>
                                 <img src={item.img} alt='/' ref={miscSlide === index ? miscRef : null}/>
-                                <h3>{item.name}</h3>
-                                <p>{item.desc}</p>
+                                <h3>{item.name.en}</h3>
+                                <p>{item.desc.en}</p>
                             </Link>
                         </StyledCatalogItem>
                     ))}

@@ -21,6 +21,11 @@
     "ownedanimals": "Owned animals",
     "addtocart": "Add to cart",
     "buy": "Checkout",
+
+    "duckcard": "Duck Card",
+    "cod": "Cash On Delivery",
+    "paypal": "PayPal",
+
     
     "welcomeback" : "Welcome back!",
     "settings" : "Settings",
@@ -58,6 +63,7 @@
     "buy": "今すぐ買う",
 
     "duckcard": "アヒルカード",
+    "cod": "代金引換",
     "paypal": "ペイパル",
 
     "welcomeback": "おかえりなさい",

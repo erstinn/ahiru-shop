@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 
 const productsAPI = import.meta.env.VITE_APP_PRODUCTS_API_URL;
 const usersAPI = import.meta.env.VITE_APP_USER_API_URL;
-export const GetUser = async (id) => {
+export const GetUser = async(id) => {
     const [user, setUser] = useState([]);
     useEffect(() => {
         fetch(`${usersAPI}/${id}`)
@@ -12,7 +12,7 @@ export const GetUser = async (id) => {
             }).catch(e=> {
             console.error('Error fetching data:', e);
         })
-    }, [])
+    }, [id])
 
     return user;
 }

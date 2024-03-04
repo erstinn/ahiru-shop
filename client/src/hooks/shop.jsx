@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react';
 const productsAPI = import.meta.env.VITE_APP_PRODUCTS_API_URL;
 const usersAPI = import.meta.env.VITE_APP_USER_API_URL;
 
-export const GetAllProducts = async () => {
+export const GetAllProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch(productsAPI)
             .then(response => response.json())
             .then(data => {
-                console.log('all products',data);
+                // console.log('all products',data);
                 setProducts(data);
             })
             .catch(error => {

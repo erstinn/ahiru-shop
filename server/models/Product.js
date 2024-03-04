@@ -17,12 +17,10 @@ const ProductSchema = new mongoose.Schema(
             en : {
                 type: 'String',
                 required: true,
-                unique: true
             } ,
             jp: {
                 type: 'String',
                 required: true,
-                unique: true
             }
         },
         desc : {

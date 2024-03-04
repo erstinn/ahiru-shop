@@ -6,11 +6,11 @@
     "salt": "",
     "firstName": "Sarah",
     "lastName": "Johnson",
-    "credit": "1111-2222-3333-4444",
     "address": "789 Oak Ave, Town, Country",
     "paymentMethod": {
       "method": "DuckCard",
-      "expirationDate": "12/25"
+      "account": "1111-2222-3333-4444",
+      "expiration": "2025-02-27"
     },
     "profilePic": ""
   },
@@ -21,11 +21,11 @@
     "salt": "",
     "firstName": "Michael",
     "lastName": "Brown",
-    "credit": "5555-6666-7777-8888",
     "address": "321 Pine St, City, Country",
     "paymentMethod": {
       "method": "PayPal",
-      "email": "michael.brown@example.com"
+      "account": "michael.brown@example.com",
+      "expiration": "2025-02-27"
     },
     "profilePic": ""
   },
@@ -36,11 +36,9 @@
     "salt": "",
     "firstName": "Emily",
     "lastName": "Wilson",
-    "credit": "9999-8888-7777-6666",
     "address": "456 Elm St, Town, Country",
     "paymentMethod": {
-      "method": "DuckCard",
-      "expirationDate": "08/24"
+      "method": "cod"
     },
     "profilePic": ""
   },
@@ -51,11 +49,11 @@
     "salt": "",
     "firstName": "Daniel",
     "lastName": "Lee",
-    "credit": "4444-3333-2222-1111",
     "address": "987 Maple Ave, City, Country",
     "paymentMethod": {
       "method": "PayPal",
-      "accountNumber": "12345678"
+      "account": "notlee@gmail.com",
+      "expiration": "2025-02-27"
     },
     "profilePic": ""
   },
@@ -66,16 +64,14 @@
     "salt": "",
     "firstName": "Olivia",
     "lastName": "Taylor",
-    "credit": "7777-8888-9999-0000",
     "address": "543 Elm St, Town, Country",
     "paymentMethod": {
-      "method": "DuckCard",
-      "expirationDate": "03/27"
+      "method": "cod"
     },
     "profilePic": "",
     "preferences": {
-      "theme": "Light",
-      "language": "English"
+      "theme": "light",
+      "language": "en"
     }
   },
   {
@@ -85,13 +81,17 @@
     "salt": "",
     "firstName": "Ethan",
     "lastName": "Martinez",
-    "credit": "1111-9999-8888-6666",
     "address": "789 Oak Ave, City, Country",
     "paymentMethod": {
       "method": "DuckCard",
-      "expirationDate": "09/23"
+      "account": "1981-2002-3923-4674",
+      "expiration": "2025-02-27"
     },
-    "profilePic": ""
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "jp"
+    }
   },
   {
     "email": "ava.hernandez@example.com",
@@ -100,13 +100,17 @@
     "salt": "",
     "firstName": "Ava",
     "lastName": "Hernandez",
-    "credit": "5555-4444-3333-2222",
     "address": "123 Main St, Town, Country",
     "paymentMethod": {
       "method": "PayPal",
-      "email": "ava.hernandez@example.com"
+      "email": "ava.hernandez@example.com",
+      "expiration": "2024-02-29"
     },
-    "profilePic": ""
+    "profilePic": "",
+    "preferences": {
+      "theme": "dark",
+      "language": "jp"
+    }
   },
   {
     "email": "noah.garcia@example.com",
@@ -115,12 +119,14 @@
     "salt": "",
     "firstName": "Noah",
     "lastName": "Garcia",
-    "credit": "9999-1111-2222-8888",
     "address": "987 Maple Ave, City, Country",
     "paymentMethod": {
-      "method": "DuckCard",
-      "expirationDate": "11/26"
+      "method": "cod"
     },
-    "profilePic": ""
+    "profilePic": "",
+    "preferences": {
+      "theme": "dark",
+      "language": "en"
+    }
   }
 ]

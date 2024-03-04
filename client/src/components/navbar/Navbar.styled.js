@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import {StyledIconSmall} from "../../styles/Globals.styled.js";
 
 
-export const StyledNavbar = styled.nav`
+export const NavbarStyled = styled.nav`
   background-color: ${(props) => props.theme.colors.nav};
   display: flex;  
   place-items: center;
@@ -34,20 +35,12 @@ export const StyledNavbar = styled.nav`
     font-weight: ${(props) => props.theme.fontWeight.thin};
     margin: 1rem 2rem 1rem 1rem;
   }
-  & img {
-    margin-left: auto;
-    margin-right: 0.5rem;
-    cursor: pointer;
-    width: 48px;
-    height: 48px;
-  }
-  
+
   & > .right-container {
-    display: grid;
-    grid-template-columns: 4rem 4rem;
-    gap: 10px;
-    margin-left: auto;  
-    
+      display: grid;
+      grid-template-columns: 4rem 4rem;
+      gap: 10px;
+      margin-left: auto;
   }
 `
 
@@ -64,55 +57,12 @@ export const StyledDropdown = styled.div`
   & li, span {
     font-size: ${(props) => props.theme.fontSizes.small};
   }
-
-  & .mini-img {
-    width: 24px;
-    height: 24px;
-    top: 2px;
-    position: relative;
-  }
-
-  & .dropdown-profile {
-    max-width: 150rem;
-    width: 100%;
-    place-items: center;
-    position: relative;
-    background-color: ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.text};
-
-  }
-  
-  & .dropdown-profile-content {
-    position: absolute;
-    top: 6.7rem;
-    right: 2rem;
-    border: 1px solid;
-    border-radius: 10px;
-    padding: 1rem;
-    z-index: 1;
-  }
-
-  & .dropdown-cart {
-    max-width: 500rem;
-    position: relative;
-    width: 100%;
-  }
-  
-  & .dropdown-cart-content {
-    position: absolute;
-    top: 5.5rem;
-    right: 8rem;
-    border: 1px solid;
-    border-radius: 10px;
-    padding: 1rem;
-  }
-
+    
   & .visible {
     display: block;
     background-color: ${(props) => props.theme.colors.secondary};
     color: ${(props) => props.theme.colors.text};
     animation: fade-in 150ms forwards;
-
   }
 
   & .hidden {
@@ -137,3 +87,58 @@ export const StyledDropdown = styled.div`
   }
 `
 
+export const StyledProfile = styled(StyledDropdown)`
+    max-width: 150rem;
+    width: 100%;
+    place-items: center;
+    position: relative;
+    // background-color: ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.text};
+
+    & .profile-content {
+        position: absolute;
+        top: 5rem;
+        right: 1rem;
+        border: 1px transparent;
+        border-radius: 10px;
+        padding: 1rem 0.5rem 1rem 1rem;
+        min-width: 8rem;
+        z-index: 1;
+    }
+    
+    & > div > li {
+        padding-bottom: 0.5rem;
+    }
+    
+    .content-label {
+        place-content: center;
+    }
+    // & .icon > div > li {
+    //     $ {StyledIconSmall};
+    // }
+
+`
+
+export const StyledCart = styled(StyledDropdown)`
+    max-width: 500rem;
+    position: relative;
+    width: 100%;
+    
+    & .cart-content {
+        position: absolute;
+        top: 5rem;
+        right: 3rem;
+        border: 1px transparent;
+        border-radius: 10px;
+        padding: 1rem;
+    }
+    
+
+`
+
+export const StyledProfileDropdownIcon = styled(StyledIconSmall)`
+    margin-right: 1rem;
+`
+
+export const StyledCartDropdownIcon = styled(StyledIconSmall)`
+`

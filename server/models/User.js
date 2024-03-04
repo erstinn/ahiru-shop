@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+
 const UserSchema = new mongoose.Schema(
     {
         email:{
@@ -38,37 +39,33 @@ const UserSchema = new mongoose.Schema(
             min: 2,
             max: 50,
         },
-        
         address:{
             type: String,
             min: 6,
             max: 255,
         },
         paymentMethod: {
-            credit: {
-                type: String,
-                required: true,
-                unique: true,
-                max: 50,
-                validate: {
-                    validator: (v) => /^(\d{4}-){3}\d{4}$/.test(v) //todo
-                }
-            },
             method: {
                 type: String,
                 enum: {
-                    values: ['GCash', 'PayPal', 'DuckCard'],
+                    values: ['cod', 'paypal', 'duckcard'],
                     message: '{VALUE} is not supported'
                 }
             },
-            expiration: {
+            account: {
+                type: String,
+                max: 50,
+                validate: {
+                    validator: (v) => isAccountNumber,
+                    message: 'Validation failed'
+                }
+            },
+            expiration: { //to set on node
                 type: Date,
-                required: true
             }
         },
         profilePic: {
             type: String,
-            unique: true,
         }, 
         preferences: {
             theme: {
@@ -89,6 +86,16 @@ const UserSchema = new mongoose.Schema(
     },
     {timestamps: true} // createdAt and updatedAt
 );
+
+const isAccountNumber = (val) => {
+    const method = this.path('paymentMethod.method');
+    if (method === 'paypal')
+        return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v)
+    if (method === 'duckcard')
+        return /^\d{4}-\d{4}-\d{4}-\d{4}$/.test(v)
+
+    return true; 
+}
 
 
 

@@ -3,18 +3,22 @@ Extremely simple web application
 
 **Focuses on:**
 
-
 - Animation and best practices for HTML/CSS
 - Best practices for authentication/authorization in backend and frontend
 - Hosted on Docker locally for easy cleanup and configuration
 
 <h3>⚙️ Setup / 設定</h3>
-1. docker-compose.yaml `docker-compose up
-2. data to mongo: [farm](server/data/farm.json), [users](server/data/users.json)
+1. inside `/server` use command `docker compose up`
+2. on `/server/.env`, use `MONGO_URL` string on MongoDB Compass on Connection String
+   - uploaded .env since it is for practice
+3. json data to mongo: [farm](server/data/farm.json), [users](server/data/users.json)
+4. 
 
 <h3> ⚠️ Warning / 警告 </h3>
 
 - change `.env` variables if changing ports 
+
+- **Making changes on `models`**: to make sure mongo container receives the changes, rebuild docker and rerun the server app
 
 
 <h3>TODO Notes / やることリスト</h3>
@@ -28,29 +32,7 @@ Extremely simple web application
 - use react-hook-form 
   - [otherwise](https://www.freecodecamp.org/news/how-to-build-forms-in-react/)
 
-- 
-
-<h3> MongoDB notes </h3>
-
-- authenticate towards the admin`MONGO_URL='mongodb://root:example@localhost:27000/farm?authSource=admin'`
-
-- Don't forget to create a user for a specific db before connecting to it:
-
-    ```
-        use admin
-        db.createUser({
-        user: "ahiru",
-        pwd: "ducky",
-        roles: [{ role: "readWrite", db: "farm" }]
-        })
-    ```
-    
-- or grant admin access to it:
-    ```
-      mongosh 'mongodb://adminUsername:adminPassword@localhost:27000/admin'
-      use farm
-      db.grantRolesToUser("adminUsername", [{ role: "readWrite", db: "farm" }])
-    ```
+- [dropdown](https://blog.logrocket.com/how-create-multilevel-dropdown-menu-react/)
 
 
 

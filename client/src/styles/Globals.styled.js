@@ -101,4 +101,19 @@ export const BaseSelect = styled.select`
   font-weight: ${(props) => props.theme.fontWeight.thin};
 `
 
+export const StyledIconMedium = styled.img`
+    margin-left: auto;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+`
+
+export const StyledIconSmall = styled.img`
+    width: 24px;
+    height: 24px;
+    top: 2px;
+    position: relative;
+`
+
 // export const BaseRadioBtn = styled.
