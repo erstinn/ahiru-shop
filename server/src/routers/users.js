@@ -26,8 +26,19 @@ router.get('/:id', async (req,res) => {
     }
 })
 
-router.post('/', async (req,res) => {
+//ノート： patch: 特定なフィールドを変えるときにしか使わない ; put：レコードの全部を更新するとき
+router.post('/login', async (req,res) => {
     try {
+        // const user = await User.findOneAndUpdate(_id: id)
+        res.json({users : []})
+    } catch (e) {
+        console.log(e);
+    }
+});
+
+router.post('/register', async (req,res) => {
+    try {
+        // const user = await User.findOneAndUpdate(_id: id)
         res.json({users : []})
     } catch (e) {
         console.log(e);
@@ -37,6 +48,9 @@ router.post('/', async (req,res) => {
 
 router.patch('/:id', async (req,res) => {
     try {
+        const {}
+        const user = await User.findOneAndUpdate({_id: req.params.id}, )
+
         res.json({users : []})
     } catch (e) {
         console.log(e);
