@@ -40,6 +40,32 @@ export const GetProduct = (id) => {
     return product
 }
 
+export const GetUserData = (id) => {
+    const [user, setUser] = useState({});
+    useEffect(() => {
+        let ignore = false; //for latencies: https://react.dev/learn/synchronizing-with-effects#fetching-data
+        fetch(`${productsAPI}/${id}`)
+           .then(response => response.json())
+           .then(data => {
+               if (!ignore)
+                   setProduct(data);
+           }).catch(e => {
+            console.error('Error fetching animal', e)
+        })
 
+        return () => {
+            ignore = true;
+        };
+    }, [id]);
+    return product
+}
 
+// リマインダー：POSTをすると、useEffectを使っちゃだめ *duck*
+export const UpdateUserPreferences = (id) => {
+    const [userPref, setUserPref] = useState([]);
+    useEffect(() => {
+
+    }, [id]);
+    return userPref
+}
 

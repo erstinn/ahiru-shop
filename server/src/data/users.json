@@ -12,7 +12,11 @@
       "account": "1111-2222-3333-4444",
       "expiration": "2025-02-27"
     },
-    "profilePic": ""
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "en"
+    }
   },
   {
     "email": "michael.brown@example.com",
@@ -27,7 +31,11 @@
       "account": "michael.brown@example.com",
       "expiration": "2025-02-27"
     },
-    "profilePic": ""
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "en"
+    }
   },
   {
     "email": "emily.wilson@example.com",
@@ -40,7 +48,11 @@
     "paymentMethod": {
       "method": "cod"
     },
-    "profilePic": ""
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "en"
+    }
   },
   {
     "email": "daniel.lee@example.com",
@@ -55,7 +67,11 @@
       "account": "notlee@gmail.com",
       "expiration": "2025-02-27"
     },
-    "profilePic": ""
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "en"
+    }
   },
   {
     "email": "olivia.taylor@example.com",

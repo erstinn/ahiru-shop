@@ -6,10 +6,14 @@ export const StyledDashboard = styled.div`
   & h1 {
     text-align: center;
   }
+    
+    & h1 > span {
+        padding-inline: 0.5rem;
+    }
   
   & > h2 {
     font-weight: ${(props) => props.theme.fontWeight.thin};
-    margin: 8rem 0 4rem 6rem;
+    margin: 4rem 0 4rem 6rem;
   }
 
   & h3 {

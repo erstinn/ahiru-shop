@@ -103,7 +103,6 @@ export const BaseSelect = styled.select`
 
 export const StyledIconMedium = styled.img`
     margin-left: auto;
-    margin-right: 0.5rem;
     cursor: pointer;
     width: 48px;
     height: 48px;
@@ -117,3 +116,26 @@ export const StyledIconSmall = styled.img`
 `
 
 // export const BaseRadioBtn = styled.
+
+export const StyledBorderAnimated = styled.div`
+    content: '';
+
+    
+    &.active {
+        border-bottom: 3px solid ${(props) => props.theme.colors.button};
+    }
+    
+    &:after {
+        display: flex;
+        margin-right: auto;
+        height: 3px;
+        width: 0;
+        background: transparent;
+        transition: width .5s ease, background-color .5s ease;
+    }
+
+    &:hover:after {
+        width: 100%;
+        background: ${(props) => props.theme.colors.button};
+    }
+`

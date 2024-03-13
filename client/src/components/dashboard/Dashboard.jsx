@@ -3,6 +3,7 @@ import {StyledDashboard} from "./Dashboard.styled.js";
 import {StyledArrow, StyledCatalog, StyledCatalogItem} from "./Catalog.styled.js";
 import { Link } from "react-router-dom";
 import { flushSync } from 'react-dom';
+import {StyledBorderAnimated, StyledIconMedium} from "../../styles/Globals.styled.js";
 import {GetAllProducts} from "../../hooks/shop.jsx";
 
 //flushSync apparently uncommon (https://react.dev/reference/react-dom/flushSync)
@@ -109,8 +110,15 @@ const Dashboard = () => {
     return (
         <>
             <StyledDashboard>
-                <h1>🐣 Ahiru Farm Catalogue 🐣</h1>
+                <h1>
+                    <StyledIconMedium src='/assets/icons/present-right.png' />
+                    <span>Ahiru Farm Catalogue</span>
+                    <StyledIconMedium src='/assets/icons/present-left.png' />
+                </h1>
+
+                <StyledBorderAnimated></StyledBorderAnimated>
                 <h2>Ducks</h2>
+
                 <StyledCatalog>
                     <StyledArrow className='left' onClick={
                         () => duckSlide === 1 ? handleDucksScroll('left', true) : handleDucksScroll('left', false)

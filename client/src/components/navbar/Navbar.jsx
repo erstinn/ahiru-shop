@@ -1,17 +1,16 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
-    StyledDropdown,
-    NavbarStyled,
-    StyledProfile,
-    StyledCart,
-    StyledProfileDropdownIcon,
-    StyledCartDropdownIcon
+   NavbarStyled,
+   StyledCart,
+   StyledCartDropdownIcon,
+   StyledDropdown,
+   StyledProfile,
+   StyledProfileDropdownIcon
 } from './Navbar.styled.js'
 import {Link, NavLink} from "react-router-dom";
 import {createPortal} from "react-dom";
 import LoginModal from "../authentication/LoginModal.jsx";
 import {StyledIconMedium} from "../../styles/Globals.styled.js";
-import * as events from "events";
 
 //TODO another dropdown approach: https://blog.logrocket.com/how-create-multilevel-dropdown-menu-react/
 // on another project, or other part of the code, i'll keep it simple for now
@@ -51,53 +50,52 @@ const Navbar = () => {
 
     useEffect(() => {
         const handler = (event) => {
-            if (profileRef.current && !profileRef.current.contains(event.target))
-                handleDropdown('profile', null, true);
+            if (profileRef.current && !profileRef.current.contains(event.target) )
+                resetDropdowns('profile');
             if (cartRef.current && !cartRef.current.contains(event.target))
-                handleDropdown('cart', null, true);
+                resetDropdowns('cart');
         }
         document.addEventListener('click', handler);
+        // document.addEventListener('mouseout', handler)
 
         return () => {
             document.removeEventListener('click', handler);
         };
     }, []);
 
-    const handleDropdown = (key, sub, resetToggle) => {
-        if (resetToggle === true) {
-          return
-        }
-        //     setOpenedDropdownMenu((dropdown) => {
-        //         dropdown.map((menu) => {
-        //             if (menu.hasOwnProperty('submenu')){
-        //                 menu.submenu.map((sub, index) => {
-        //                     sub[index] = false;
-        //                 })
-        //             } else {
-        //                 menu = false;
-        //             }
-        //         })
-        //     })
-        //     console.log('reset', openedDropdownMenu)
-        // }
-
-
-      if (sub !== null) {
+    const handleDropdown = (key, sub) => {
+        if (sub !== null) {
          const openedSubMenu = openedDropdownMenu.menus.map(menu => {
             if (menu.hasOwnProperty('submenu')){
-
+               menu['submenu'].map((submenu) => {
+                  const others = Object.keys(submenu)[0]
+                  sub === others ?  submenu[sub] = !submenu[sub] : submenu[others] = false
+               })
             }
+            return menu;
          })
-      } else {
-         const openedMenu = openedDropdownMenu.menus.map(menu => {
-             const others = Object.keys(menu)[0]
-             key === others ? menu[key] = !menu[key] : menu[others] = false
-             return menu
-         });
-            setOpenedDropdownMenu({menus: openedMenu})
+           console.log(openedSubMenu)
+           setOpenedDropdownMenu({menus: openedSubMenu})
+        } else {
+            const openedMenu = openedDropdownMenu.menus.map(menu => {
+                const others = Object.keys(menu)[0]
+                key === others ? menu[key] = !menu[key] : menu[others] = false
+                return menu
+            });
+               setOpenedDropdownMenu({menus: openedMenu})
          }
+       }
 
+    const resetDropdowns = (key) => {
+       const closed = openedDropdownMenu.menus
+          .map(opened =>{
+          opened[key] = false
 
+          if (opened.hasOwnProperty('submenu'))
+             opened.submenu.map((openedSub) => openedSub = false)
+          return opened;
+       })
+       setOpenedDropdownMenu({menus: closed})
     }
 
 
@@ -118,7 +116,7 @@ const Navbar = () => {
           <div className="right-container">
               <StyledDropdown ref={cartRef}>
                   <StyledCart>
-                      <StyledIconMedium src="/assets/icons/cart.png" onClick={() => handleDropdown('cart', null, false)} alt="🔻"/>
+                      <StyledIconMedium src="/assets/icons/cart.png" onClick={() => handleDropdown('cart', null)} alt="🔻"/>
                       <div className={`cart-content ${openedDropdownMenu.menus.some(menu => menu.cart) ? 'visible' : 'hidden'}`}>
                           <h3>My Farm</h3>
                           <button>
@@ -130,58 +128,74 @@ const Navbar = () => {
 
               <StyledDropdown ref={profileRef}>
                   <StyledProfile>
-                      <StyledIconMedium src="/assets/icons/profile.png" onClick={() => handleDropdown('profile', null, false)} alt="🔻"/>
-                      <div className={`profile-content 
+                      <StyledIconMedium src="/assets/icons/profile.png" onClick={() => handleDropdown('profile', null)} alt="🔻"/>
+                     <div className={`content profile 
                         ${openedDropdownMenu.menus.some(menu => menu.profile) ? 'visible' : 'hidden'}`}>
-
-                          <li>
+                        <Link to='/settings'>
+                           <li onClick={() => resetDropdowns('profile')}>
                               <StyledProfileDropdownIcon src="/assets/icons/settings.png" alt=""/>
-                              <Link to='/settings'>Settings</Link>
-                          </li>
+                              <span>Settings</span>
+                           </li>
+                        </Link>
+
+                        <li onClick={() => handleDropdown('profile', 'theme')}>
+                           <StyledProfileDropdownIcon src="/assets/icons/darkmode.png" alt=""/>
+                           <span>Theme</span>
+                        </li>
+                           {openedDropdownMenu.menus.filter(menu => menu.profile)
+                                 .map(menu => menu.submenu.some(sub =>  sub.theme)).includes(true) &&
+                              <ul className='submenu content visible'>
+                                 <li onClick={() => handleDropdown('profile', 'theme')}>
+                                    <StyledProfileDropdownIcon src="/assets/icons/darkmode.png" alt=""/>
+                                    <span>Dark mode</span>
+                                 </li>
+                                 <li onClick={() => handleDropdown('profile', 'theme')}>
+                                    <StyledProfileDropdownIcon src="/assets/icons/lightmode.png" alt=""/>
+                                    <span>Light mode</span>
+                                 </li>
+                              </ul>
+                           }
 
 
-                          <li onMouseEnter={() => handleDropdown('profile', 'theme', false)}
-                              onMouseLeave={() => handleDropdown('profile', 'theme', false)}>
-                              <StyledProfileDropdownIcon src="/assets/icons/darkmode.png" alt=""/>
-                              <span>Theme</span>
-                          </li>
-                          {
-                              openedDropdownMenu['profile'] ?
-                                openedDropdownMenu['profile']['theme'] &&
-                            <div className={`profile-content visible`}>
+                        <li onClick={() => handleDropdown('profile', 'language')}>
+                           <StyledProfileDropdownIcon src="/assets/icons/language.png" alt=""/>
+                           <span>Language</span>
+                        </li>
 
-                            </div>
-                                : ''
-                          }
+                        {openedDropdownMenu.menus.filter(menu => menu.profile).map(menu => menu.submenu.some(sub => sub.language)).includes(true) &&
+                           <ul className='submenu content visible'>
+                              <li>
+                                 <span>English</span>
 
-                          <li>
-                              <StyledProfileDropdownIcon src="/assets/icons/language.png" alt=""/>
-                              <span>Language</span>
-
-                              {/*{&&}*/}
-                          </li>
+                              </li>
+                              <li>
+                                 <span>Japanese</span>
+                              </li>
+                           </ul>
+                        }
 
 
-                          <li>
-                              <StyledProfileDropdownIcon src="/assets/icons/login.png" alt=""/>
-                              {
-                                  isMobile ? (<Link to='/login'> LoginZ </Link>)
-                                    : (<span onClick={() => setLoginModal(true)}>LoginA</span>)
-                              }
-                          </li>
+                        <li>
+                           <StyledProfileDropdownIcon src="/assets/icons/login.png" alt=""/>
+                           {
+                              isMobile ? (<Link to='/login'> LoginZ </Link>)
+                                 : (<span onClick={() => setLoginModal(true)}>LoginA</span>)
+                           }
+                        </li>
 
-                          {showLoginModal && createPortal(
-                            <LoginModal onClose={() => setLoginModal(false)}/>
-                            , document.body
-                          )
-                          }
+                        {showLoginModal && createPortal(
+                           <LoginModal onClose={() => setLoginModal(false)}/>
+                           , document.body
+                        )
+                        }
 
-
-                          <li>
+                        <Link to='/register'>
+                           <li>
                               <StyledProfileDropdownIcon src="/assets/icons/logout.png" alt=""/>
-                              <Link to='/register'>Logout</Link>
-                          </li>
-                      </div>
+                              <span>Logout</span>
+                           </li>
+                        </Link>
+                     </div>
                   </StyledProfile>
               </StyledDropdown>
 

@@ -70,7 +70,6 @@ export const GlobalStyle = createGlobalStyle`
   h4  {
     font-weight: ${(props) => props.theme.fontWeight.thin};
     font-size: ${(props) => props.theme.fontSizes.med};
-    
   }
 
 
@@ -82,6 +81,7 @@ export const GlobalStyle = createGlobalStyle`
   
   h1 {
     font-size: ${(props) => props.theme.fontSizes.vlarge};
+      font-weight: ${(props) => props.theme.fontWeight.thin};
   }
 
   p {

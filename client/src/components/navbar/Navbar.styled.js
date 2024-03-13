@@ -7,10 +7,10 @@ export const NavbarStyled = styled.nav`
   display: flex;  
   place-items: center;
   padding: 1rem;
-  
-  
+
+
+ //border animation: https://stackoverflow.com/questions/26726436/css-bottom-border-transition-expand-from-middle
   & .option.active {
-    //border animation: https://stackoverflow.com/questions/26726436/css-bottom-border-transition-expand-from-middle
     border-bottom: 3px solid ${(props) => props.theme.colors.button};
   }
   
@@ -59,13 +59,13 @@ export const StyledDropdown = styled.div`
   }
     
   & .visible {
-    display: block;
+      //display: block;
     background-color: ${(props) => props.theme.colors.secondary};
     color: ${(props) => props.theme.colors.text};
     animation: fade-in 150ms forwards;
   }
 
-  & .hidden {
+  .hidden {
     animation: fade-out 300ms forwards;
   }
 
@@ -94,20 +94,35 @@ export const StyledProfile = styled(StyledDropdown)`
     position: relative;
     // background-color: ${(props) => props.theme.colors.secondary};
     color: ${(props) => props.theme.colors.text};
-
-    & .profile-content {
+    
+    & .content {
         position: absolute;
-        top: 5rem;
-        right: 1rem;
         border: 1px transparent;
         border-radius: 10px;
-        padding: 1rem 0.5rem 1rem 1rem;
         min-width: 8rem;
         z-index: 1;
+    } 
+
+    & .profile {
+        transform: translate(-100px, 180px);
+        padding: 1rem 0.5rem 1rem 1rem;
     }
     
-    & > div > li {
-        padding-bottom: 0.5rem;
+    & .submenu {
+        width: 100%;
+        padding-left: 1rem;
+        right: 105%;
+        margin-top: -1rem;
+    }
+    
+    & > div  * {
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+    }
+
+    & li{
+        display: flex;
+        align-items: center;
     }
     
     .content-label {

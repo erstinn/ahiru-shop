@@ -11,7 +11,7 @@ Extremely simple web application
 1. inside `/server` use command `docker compose up`
 2. on `/server/.env`, use `MONGO_URL` string on MongoDB Compass on Connection String
    - uploaded .env since it is for practice
-3. json data to mongo: [farm](server/data/farm.json), [users](server/data/users.json)
+3. json data to mongo: [farm](server/src/data/farm.json), [users](server/src/data/users.json)
 4. 
 
 <h3> ⚠️ Warning / 警告 </h3>
@@ -23,16 +23,17 @@ Extremely simple web application
 
 <h3>TODO Notes / やることリスト</h3>
 
-- TODO
 
-  - Custom Hooks
+- Custom Hooks
 
-  - reduce `fetch` by caching 
+- reduce `fetch` by caching 
 
 - use react-hook-form 
   - [otherwise](https://www.freecodecamp.org/news/how-to-build-forms-in-react/)
 
 - [dropdown](https://blog.logrocket.com/how-create-multilevel-dropdown-menu-react/)
+
+- reviews/comments
 
 
 
