@@ -1,0 +1,3 @@
+- remove 44 styled components error that appears randomly by installing
+  - `npm i @types/styled-components`
+- 

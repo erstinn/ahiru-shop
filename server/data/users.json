@@ -1,0 +1,142 @@
+[
+  {
+    "email": "sarah.johnson@example.com",
+    "username": "user3",
+    "passwordHash": "",
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "address": "789 Oak Ave, Town, Country",
+    "paymentMethod": {
+      "method": "DuckCard",
+      "account": "1111-2222-3333-4444",
+      "expiration": "2025-02-27",
+      "balance": 999
+    },
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "en"
+    }
+  },
+  {
+    "email": "michael.brown@example.com",
+    "username": "user4",
+    "passwordHash": "",
+    "firstName": "Michael",
+    "lastName": "Brown",
+    "address": "321 Pine St, City, Country",
+    "paymentMethod": {
+      "method": "PayPal",
+      "account": "michael.brown@example.com",
+      "expiration": "2025-02-27"
+    },
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "en"
+    }
+  },
+  {
+    "email": "emily.wilson@example.com",
+    "username": "user5",
+    "passwordHash": "",
+    "firstName": "Emily",
+    "lastName": "Wilson",
+    "address": "456 Elm St, Town, Country",
+    "paymentMethod": {
+      "method": "cod"
+    },
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "en"
+    }
+  },
+  {
+    "email": "daniel.lee@example.com",
+    "username": "user6",
+    "passwordHash": "",
+    "firstName": "Daniel",
+    "lastName": "Lee",
+    "address": "987 Maple Ave, City, Country",
+    "paymentMethod": {
+      "method": "PayPal",
+      "account": "notlee@gmail.com",
+      "expiration": "2025-02-27"
+    },
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "en"
+    }
+  },
+  {
+    "email": "olivia.taylor@example.com",
+    "username": "user7",
+    "passwordHash": "",
+    "firstName": "Olivia",
+    "lastName": "Taylor",
+    "address": "543 Elm St, Town, Country",
+    "paymentMethod": {
+      "method": "cod"
+    },
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "en"
+    }
+  },
+  {
+    "email": "ethan.martinez@example.com",
+    "username": "user8",
+    "passwordHash": "",
+    "firstName": "Ethan",
+    "lastName": "Martinez",
+    "address": "789 Oak Ave, City, Country",
+    "paymentMethod": {
+      "method": "DuckCard",
+      "account": "1981-2002-3923-4674",
+      "expiration": "2025-02-27",
+      "balance": 999
+    },
+    "profilePic": "",
+    "preferences": {
+      "theme": "light",
+      "language": "jp"
+    }
+  },
+  {
+    "email": "ava.hernandez@example.com",
+    "username": "user9",
+    "passwordHash": "",
+    "firstName": "Ava",
+    "lastName": "Hernandez",
+    "address": "123 Main St, Town, Country",
+    "paymentMethod": {
+      "method": "PayPal",
+      "email": "ava.hernandez@example.com",
+      "expiration": "2024-02-29"
+    },
+    "profilePic": "",
+    "preferences": {
+      "theme": "dark",
+      "language": "jp"
+    }
+  },
+  {
+    "email": "noah.garcia@example.com",
+    "username": "user10",
+    "passwordHash": "",
+    "firstName": "Noah",
+    "lastName": "Garcia",
+    "address": "987 Maple Ave, City, Country",
+    "paymentMethod": {
+      "method": "cod"
+    },
+    "profilePic": "",
+    "preferences": {
+      "theme": "dark",
+      "language": "en"
+    }
+  }
+]
