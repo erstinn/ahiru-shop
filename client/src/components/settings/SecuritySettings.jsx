@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
     StyledCancelInputBtn,
     StyledSettingsInput,
@@ -9,9 +9,12 @@ import {
 import {createPortal} from "react-dom";
 import DeleteAccountModal from "../modals/DeleteAccountModal.jsx";
 import RemoveAccountModal from "../modals/RemoveAccountModal.jsx";
+import {LocaleContext} from "../../hooks/LocaleContext.js";
 
 
 const SecuritySettings = () => {
+   const {prefLanguage, setPrefLanguage, lang} = useContext(LocaleContext);
+   const locale = lang[prefLanguage];
     //UI State variables
     const [showDeleteAccountModal, setDeleteAccountModal] = useState(false);
     const [showDeletePaymentModal, setDeletePaymentModal] = useState(false);
@@ -37,11 +40,11 @@ const SecuritySettings = () => {
 
     return (
         <div>
-            <StyledSettingHeader>Security</StyledSettingHeader>
-            <h4>Password</h4>
+            <StyledSettingHeader>{locale.securitySettings}</StyledSettingHeader>
+            <h4>{locale.password}</h4>
             <StyledSettingsInput type="text" id="firstname" name="firstname"/>
 
-            <StyledSettingHeader>Linked billing accounts</StyledSettingHeader>
+            <StyledSettingHeader>{locale.linkedAccounts}</StyledSettingHeader>
             <StyledPaymentContainer>
                 <div className='add-button'>
                     <img src="/assets/icons/remove-50.png" className="btn-26" onClick={() => setDeletePaymentModal(true)} alt=""/>
@@ -53,34 +56,35 @@ const SecuritySettings = () => {
                 </div>
                 <div className='details'>
                     <h4 className='account-title'>Gcash</h4>
-                    <p> <b>Account No.: </b> 12355</p>
+                    <p> <b>{locale.accountInfo}: </b> 12355</p>
+                {/*   sample, to delete ^*/}
                 </div>
             </StyledPaymentContainer>
 
             { !showAddPaymentInput &&
                 <StyledPaymentContainer>
                     <div className='add-button'><img src="/assets/icons/add-50.png" alt="" className='btn-26' onClick={() => setAddPaymentInput(true)}/></div>
-                    <div className='add-title'> <h4> Add mode of payment</h4> </div>
+                    <div className='add-title'> <h4>{locale.addPayment}</h4> </div>
                 </StyledPaymentContainer>
             }
             { showAddPaymentInput &&
                 <StyledPaymentMethodInput>
 
                     <form action="">
-                        <label htmlFor="gcash">GCash</label>
+                        <label htmlFor="gcash">{locale.gcash}</label>
                         <StyledRadio type="radio" id="gcash" name="options" value="GCash" ></StyledRadio>
 
-                        <label htmlFor="paypal">PayPal</label>
+                        <label htmlFor="paypal">{locale.paypal}</label>
                         <StyledRadio type="radio" id="paypal" name="options" value="PayPal" ></StyledRadio>
 
-                        <label htmlFor="ahirucard">AhiruCard</label>
+                        <label htmlFor="ahirucard">{locale.ahirucard}</label>
                         <StyledRadio type="radio" id="ahirucard" name="options" value="AhiruCard" />
 
-                        <label htmlFor="duckcard">DuckCard</label>
+                        <label htmlFor="duckcard">{locale.duckcard}</label>
                         <StyledRadio type="radio" id="duckcard" name="options" value="DuckCard" />
                     </form>
 
-                    <label htmlFor="accountNo">Account No.:</label>
+                    <label htmlFor="accountNo">{locale.accountInfo}: </label>
                     <StyledSettingsInput type="text" id="accountNo" name="accountNo"/>
                     <StyledCancelInputBtn onClick={() => setAddPaymentInput(false)}>Cancel</StyledCancelInputBtn>
                 </StyledPaymentMethodInput>
@@ -88,10 +92,10 @@ const SecuritySettings = () => {
             <h4>Username</h4>
             
             
-            <StyledSettingHeader>Delete account</StyledSettingHeader>
-            <p className='warning'>Permanently delete your account and your details.</p>
+            <StyledSettingHeader>{locale.deleteAcc}</StyledSettingHeader>
+            <p className='warning'>{locale.deleteAccDesc}</p>
             <StyledWarningBtn onClick={() => setDeleteAccountModal(true)}>
-                Delete account
+               {locale.deleteAcc}
             </StyledWarningBtn>
             {showDeleteAccountModal && createPortal(
                     <DeleteAccountModal onClose={() => setDeleteAccountModal(false)} />,

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {
     CenterDiv,
     StyledAuthContainer,
@@ -7,11 +7,27 @@ import {
     StyledRegBtn,
     StyledRegInput
 } from "./Login.styled.js";
-import { useForm } from 'react-hook-form';
+// import { useForm } from 'react-hook-form';
+import { Formik } from "formik";
+import * as yup from "yup";
 
 const Register = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const usersAPI = import.meta.env.VITE_APP_USER_API_URL;
+    // const language = useContext(LocaleContext);    // const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const loginSchema = yup.object().shape({
+        email: yup.string().email("invalid email").required("required"),
+        password: yup.string().required("required"),
+    });
+
+    const initialValuesLogin = {
+        email: "",
+        password: "",
+    };
     const onSubmit = (data) => {
+        // fetch(`${usersAPI}/register`).then(res => res.json()).then(data =>{
+        //
+        // })
         console.log(data);
     };
 
@@ -20,9 +36,13 @@ const Register = () => {
             <StyledAuthContainer>
                 <StyledGreeting>Register</StyledGreeting>
 
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form >
                     <StyledRegBody>
-                        <label>Full name
+                        <label>First name
+                            <StyledRegInput />
+                        </label>
+
+                        <label>Last name
                             <StyledRegInput />
                         </label>
 
@@ -35,6 +55,10 @@ const Register = () => {
                         </label>
 
                         <label>Password
+                        <StyledRegInput />
+                        </label>
+
+                        <label>Confirm password
                         <StyledRegInput />
                         </label>
 

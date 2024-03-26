@@ -1,7 +1,10 @@
 import {StyledMainBody, StyledSettings, StyledSidebar} from "./Settings.styled.js";
 import {NavLink, Outlet} from "react-router-dom";
-import React from "react";
+import React, {useContext} from "react";
+import {LocaleContext} from "../../hooks/LocaleContext.js";
 const Settings = () => {
+    const {prefLanguage, setPrefLanguage, lang} = useContext(LocaleContext);
+    const locale = lang[prefLanguage];
     return (
         <StyledSettings>
             <StyledSidebar>
@@ -13,18 +16,18 @@ const Settings = () => {
                 <div className="options-nav">
                     <NavLink to="/settings" end className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : null}`} >
                         {/* preferences: light/dark mode, language; change address*/}
-                        General
+                        {locale.generalSettings}
                     </NavLink>
                     <NavLink to="preferences" className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : null}`} >
-                        Preferences
+                        {locale.preferencesSettings}
                     </NavLink>
                     <NavLink to="security"
                         className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : null}`} >
-                        Security
+                        {locale.securitySettings}
                     </NavLink>
                     <NavLink to="transactions"
                              className={`option ${({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : null}`} >
-                        Transaction History
+                        {locale.transactionSettings}
                     </NavLink>
                 </div>
             </StyledSidebar>

@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 
+// hooks/fetch i just combine
 const productsAPI = import.meta.env.VITE_APP_PRODUCTS_API_URL;
 const usersAPI = import.meta.env.VITE_APP_USER_API_URL;
 export const GetUser = async(id) => {
@@ -31,4 +32,18 @@ export const GetAllUsers = async () => {
     }, [])
 
     return users;
+}
+
+export const UpdateLanguage = async () => {
+
+}
+
+export const Login = async ({creds}) => {
+    return fetch(`${usersAPI}/login`, {
+        method: 'POST',
+        header:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(creds)
+    }).then(data => data.json());
 }

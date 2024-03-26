@@ -13,6 +13,8 @@ import GeneralSettings from "./components/settings/GeneralSettings.jsx";
 import TransactionHistory from "./components/settings/TransactionHistory.jsx";
 import Login from "./components/authentication/Login.jsx";
 import { GetUser } from './hooks/user.jsx';
+import {LocaleContext} from "./hooks/LocaleContext.js";
+import lang from './locales/translation.json';
 import Register from "./components/authentication/Register.jsx";
 
 
@@ -23,22 +25,20 @@ function App() {
   // const [language, setLanguage] = useState("en"); // State for selected language
   // const currentLanguage = translation[language];
 
-  const LocaleContext = createContext(null);
-  const [language, setLanguage] = useState("en") //todo when auth is implemented fetch user's pref and set as state
+  const [prefLanguage, setPrefLanguage] = useState("en") //default value never changes so set to a meaningful state than null (react.dev)
   
 
   // console.log(GetUser('65de03ad8fb0d98ee0f42add'))
-  GetUser('65de03ad8fb0d98ee0f42ae1').then(user => {
+  GetUser('65f1c6b2f57b7308df59c8b7').then(user => {
     // console.log(user._id, user, user['preferences']['language'], user['preferences']['theme']); //todo jwt and stuff for login to finish
     // TODO works but fix latency since error appears: Uncaught (in promise) TypeError: user.preferences is undefined
-    setLanguage(user['preferences']['language'])
-
+    setPrefLanguage(user['preferences']['language'])
   });
   
   return (
       <BrowserRouter>
           <Theme>
-            <LocaleContext.Provider value={language}>
+            <LocaleContext.Provider value={{prefLanguage, setPrefLanguage, lang}}>
               <Routes>
                   <Route element={<Layout />}>
 

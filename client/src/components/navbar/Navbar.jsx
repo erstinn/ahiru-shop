@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import {
    NavbarStyled,
    StyledCart,
@@ -11,12 +11,15 @@ import {Link, NavLink} from "react-router-dom";
 import {createPortal} from "react-dom";
 import LoginModal from "../authentication/LoginModal.jsx";
 import {StyledIconMedium} from "../../styles/Globals.styled.js";
+import {LocaleContext} from "../../hooks/LocaleContext.js";
 
 //TODO another dropdown approach: https://blog.logrocket.com/how-create-multilevel-dropdown-menu-react/
 // on another project, or other part of the code, i'll keep it simple for now
 const Navbar = () => {
+   const usersAPI = import.meta.env.VITE_APP_USER_API_URL;
 
-    // const locale = useContext(LocaleContext)
+    const {prefLanguage, setPrefLanguage, lang} = useContext(LocaleContext);
+    const locale = lang[prefLanguage];
 
     const profileRef = useRef(null);
     const cartRef = useRef(null);
@@ -47,7 +50,6 @@ const Navbar = () => {
     }, [])
 
 
-
     useEffect(() => {
         const handler = (event) => {
             if (profileRef.current && !profileRef.current.contains(event.target) )
@@ -56,7 +58,6 @@ const Navbar = () => {
                 resetDropdowns('cart');
         }
         document.addEventListener('click', handler);
-        // document.addEventListener('mouseout', handler)
 
         return () => {
             document.removeEventListener('click', handler);
@@ -87,16 +88,36 @@ const Navbar = () => {
        }
 
     const resetDropdowns = (key) => {
-       const closed = openedDropdownMenu.menus
-          .map(opened =>{
-          opened[key] = false
+       const closed = openedDropdownMenu.menus.map(opened =>{
+         opened[key] = false
+         const currentKey = Object.keys(opened)[0]
 
-          if (opened.hasOwnProperty('submenu'))
-             opened.submenu.map((openedSub) => openedSub = false)
+             if (opened.hasOwnProperty('submenu') && currentKey === key) {
+                opened.submenu = opened.submenu.map((openedSub) => {
+                   const updatedSubmenu = {};
+                   for (const openedSubKey in openedSub) {
+                      if (openedSub.hasOwnProperty(openedSubKey)) {
+                         updatedSubmenu[openedSubKey] = false;
+                      }
+                   }
+                   return updatedSubmenu;
+                });
+             }
+          console.log('opened', opened )
           return opened;
        })
        setOpenedDropdownMenu({menus: closed})
     }
+
+    const handleLanguageUpdate = async (language) => {
+       const updateLanguage = await fetch(`${usersAPI}/`, {
+          method: "PATCH",
+          headers: {Authorization: `Bearer ${token}`},
+          body: JSON.stringify({"preferences.language": language})
+       })
+    }
+
+    const getPreferredLanguage = async ()
 
 
     return (
@@ -104,12 +125,12 @@ const Navbar = () => {
           <li><NavLink to='/'
                        className={`option 
                         ${({isActive, isPending}) => isPending ? "pending" : isActive ? "active" : null}`}>
-              Dashboard
+             {locale.farm}
           </NavLink></li>
           <li><NavLink to='/farm'
                        className={`option 
                         ${({isActive, isPending}) => isPending ? "pending" : isActive ? "active" : null}`}>
-              Farm
+             {locale.dashboard}
           </NavLink></li>
 
 
@@ -118,7 +139,7 @@ const Navbar = () => {
                   <StyledCart>
                       <StyledIconMedium src="/assets/icons/cart.png" onClick={() => handleDropdown('cart', null)} alt="🔻"/>
                       <div className={`cart-content ${openedDropdownMenu.menus.some(menu => menu.cart) ? 'visible' : 'hidden'}`}>
-                          <h3>My Farm</h3>
+                          <h3>{locale.cart}</h3>
                           <button>
                               <StyledCartDropdownIcon className='icon' src="/assets/icons/add-to-cart.png" alt=""/>
                           </button>
@@ -134,24 +155,26 @@ const Navbar = () => {
                         <Link to='/settings'>
                            <li onClick={() => resetDropdowns('profile')}>
                               <StyledProfileDropdownIcon src="/assets/icons/settings.png" alt=""/>
-                              <span>Settings</span>
+                              <span>
+                                 {locale.settings}
+                              </span>
                            </li>
                         </Link>
 
                         <li onClick={() => handleDropdown('profile', 'theme')}>
                            <StyledProfileDropdownIcon src="/assets/icons/darkmode.png" alt=""/>
-                           <span>Theme</span>
+                           <span>{locale.theme}</span>
                         </li>
                            {openedDropdownMenu.menus.filter(menu => menu.profile)
                                  .map(menu => menu.submenu.some(sub =>  sub.theme)).includes(true) &&
                               <ul className='submenu content visible'>
                                  <li onClick={() => handleDropdown('profile', 'theme')}>
                                     <StyledProfileDropdownIcon src="/assets/icons/darkmode.png" alt=""/>
-                                    <span>Dark mode</span>
+                                    <span>{locale.darkMode}</span>
                                  </li>
                                  <li onClick={() => handleDropdown('profile', 'theme')}>
                                     <StyledProfileDropdownIcon src="/assets/icons/lightmode.png" alt=""/>
-                                    <span>Light mode</span>
+                                    <span>{locale.lightMode}</span>
                                  </li>
                               </ul>
                            }
@@ -159,17 +182,17 @@ const Navbar = () => {
 
                         <li onClick={() => handleDropdown('profile', 'language')}>
                            <StyledProfileDropdownIcon src="/assets/icons/language.png" alt=""/>
-                           <span>Language</span>
+                           <span>{locale.language}</span>
                         </li>
 
                         {openedDropdownMenu.menus.filter(menu => menu.profile).map(menu => menu.submenu.some(sub => sub.language)).includes(true) &&
                            <ul className='submenu content visible'>
-                              <li>
-                                 <span>English</span>
+                              <li onClick={() => handleLanguageUpdate('en')}>
+                                 <span>{locale.language1}</span>
 
                               </li>
-                              <li>
-                                 <span>Japanese</span>
+                              <li onClick={() => handleLanguageUpdate('jp')}>
+                                 <span>{locale.language2}</span>
                               </li>
                            </ul>
                         }
@@ -179,7 +202,7 @@ const Navbar = () => {
                            <StyledProfileDropdownIcon src="/assets/icons/login.png" alt=""/>
                            {
                               isMobile ? (<Link to='/login'> LoginZ </Link>)
-                                 : (<span onClick={() => setLoginModal(true)}>LoginA</span>)
+                                 : (<span onClick={() => setLoginModal(true)}>{locale.login}</span>)
                            }
                         </li>
 
@@ -192,7 +215,7 @@ const Navbar = () => {
                         <Link to='/register'>
                            <li>
                               <StyledProfileDropdownIcon src="/assets/icons/logout.png" alt=""/>
-                              <span>Logout</span>
+                              <span>{locale.logout}</span>
                            </li>
                         </Link>
                      </div>

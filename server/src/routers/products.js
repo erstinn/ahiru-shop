@@ -1,37 +1,16 @@
 import {Router} from "express";
 import Product from '../models/Product.js';
-import {getProduct} from "../middleware/product.js";
+import {deleteProduct, getProduct} from "../controllers/products.js";
+import {getAllProducts} from "../controllers/products.js";
+import {verifyToken} from "../middleware/users.js";
 const router = Router ();
 
-router.get('/', async (req,res) => {
-    try {
-        const products = await Product.find();
-        res.json(products)
+router.get('/', getAllProducts);
+router.get('/:animalID', getProduct);
+router.patch('/:animalID/:userId', )
+router.delete('/:animalID', getProduct)
 
-    } catch (e) {
-        console.log(e);
-    }
-});
-
-router.get('/:id', async (req, res) => {
-    try {
-        const product = await Product.findById(req.params.id)
-        if (product === null)
-            return res.status(404).json({ message: 'Product not found' });
-        res.json(product);
-    } catch (e) {
-    }
-});
-
-router.delete('/:id', getProduct, async(req, res) => {
-    try {
-        // const product
-    }   catch (e) {
-        
-    }
-});
-
-router.put('/:id', async (req,res) => {
+router.put('/:animalID', async (req,res) => {
     try {
         res.json({users : []})
     } catch (e) {
@@ -39,13 +18,7 @@ router.put('/:id', async (req,res) => {
     }
 });
 
-
-router.delete('/:id', async (req,res) => {
-    try {
-        res.json({user : []})
-    } catch (e) {
-        console.log(e);
-    }
-});
+// todo verify if seller
+router.delete('/:animalID', verifyToken, deleteProduct);
 
 export default router;

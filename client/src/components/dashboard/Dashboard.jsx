@@ -5,12 +5,15 @@ import { Link } from "react-router-dom";
 import { flushSync } from 'react-dom';
 import {StyledBorderAnimated, StyledIconMedium} from "../../styles/Globals.styled.js";
 import {GetAllProducts} from "../../hooks/shop.jsx";
+import {LocaleContext} from "../../hooks/LocaleContext.js";
 
 //flushSync apparently uncommon (https://react.dev/reference/react-dom/flushSync)
 //but apparently needed to update ref
 const Dashboard = () => {
+    const {prefLanguage, setPrefLanguage, lang} = useContext(LocaleContext);
+    const locale = lang[prefLanguage]
+
     const products = GetAllProducts();
-    // console.log(products, 'nksand')
     const [othersArray, setOthersArray] = useState(products.filter(item => item.type === 'others'));
     const [ducksArray, setDucksArray] = useState(products.filter(item => item.type === 'duck'));
     const [miscArray, setMiscArray] = useState(products.filter(item => item.type === 'misc'));
@@ -112,12 +115,12 @@ const Dashboard = () => {
             <StyledDashboard>
                 <h1>
                     <StyledIconMedium src='/assets/icons/present-right.png' />
-                    <span>Ahiru Farm Catalogue</span>
+                    <span>{locale.homepageHeader}</span>
                     <StyledIconMedium src='/assets/icons/present-left.png' />
                 </h1>
 
                 <StyledBorderAnimated></StyledBorderAnimated>
-                <h2>Ducks</h2>
+                <h2>{locale.ducks}</h2>
 
                 <StyledCatalog>
                     <StyledArrow className='left' onClick={
@@ -128,8 +131,8 @@ const Dashboard = () => {
                             <StyledCatalogItem key={index}>
                                 <Link to={`/animals/${item._id}`}>
                                 <img src={item.img} alt='/' ref={duckSlide === index ? ducksRef : null}/>
-                                <h3>{item.name.en}</h3>
-                                <p>{item.desc.en}</p>
+                                <h3>{item.name.prefLanguage}</h3>
+                                <p>{item.desc.prefLanguage}</p>
                                 </Link>
                             </StyledCatalogItem>
                         ))}
@@ -138,7 +141,7 @@ const Dashboard = () => {
                         }> {">"} </StyledArrow>
                 </StyledCatalog>
 
-                <h2>Other Animals</h2>
+                <h2>{locale.otherAnimals}</h2>
                 <StyledCatalog>
                     <StyledArrow className='left' onClick={
                         () => otherSlide === 1 ? handleOthersScroll('left', true) : handleOthersScroll('left', false)
@@ -148,8 +151,8 @@ const Dashboard = () => {
                         <StyledCatalogItem key={index}>
                             <Link to={`/animals/${item._id}`}>
                             <img src={item.img} alt='/' ref={otherSlide === index ? othersRef : null}/>
-                            <h3>{item.name.en}</h3>
-                            <p>{item.desc.en}</p>
+                            <h3>{item.name.prefLanguage}</h3>
+                            <p>{item.desc.prefLanguage}</p>
                             </Link>
                         </StyledCatalogItem>
                     ))}
@@ -158,7 +161,7 @@ const Dashboard = () => {
                     }> {">"} </StyledArrow>
                 </StyledCatalog>
 
-                <h2>Miscellaneous</h2>
+                <h2>{locale.others1}</h2>
                 <StyledCatalog>
                     <StyledArrow className='left' onClick={
                         () => duckSlide === 1 ? handleMiscScroll('left', true)
@@ -169,8 +172,8 @@ const Dashboard = () => {
                         <StyledCatalogItem key={index}>
                             <Link to={`/misc/${item._id}`}>
                                 <img src={item.img} alt='/' ref={miscSlide === index ? miscRef : null}/>
-                                <h3>{item.name.en}</h3>
-                                <p>{item.desc.en}</p>
+                                <h3>{item.name.prefLanguage}</h3>
+                                <p>{item.desc.prefLanguage}</p>
                             </Link>
                         </StyledCatalogItem>
                     ))}

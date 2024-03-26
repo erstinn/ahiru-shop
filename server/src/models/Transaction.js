@@ -11,7 +11,7 @@ const TransactionSchema = new mongoose.Schema(
          type: 'String',
          required: true,
       },
-      picPath:{
+      method :{
          type: 'String',
          default: '',
       },

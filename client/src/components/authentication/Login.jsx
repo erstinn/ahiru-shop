@@ -10,7 +10,12 @@ import {StyledLink} from "../../styles/Globals.styled.js";
 import {useForm} from "react-hook-form";
 
 const Login = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, watch, formState: { errors } } = useForm({
+        defaultValues:{
+            username: '',
+            password:''
+        }
+    });
     const onSubmit = (data) => {
         console.log(data);
     };
@@ -22,9 +27,9 @@ const Login = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <StyledLoginBody>
                         <div className='modal-content'>
-                            <label> Username/E-mail
+                            <label> Username
                                 <StyledLoginInput {...register(
-                                    'auth',
+                                    'username',
                                     {
                                         required: 'Please input your e-mail or username',
                                     })}
@@ -34,7 +39,7 @@ const Login = () => {
 
                             <label> Password
                                 <StyledLoginInput {...register(
-                                    'pw',
+                                    'password',
                                     {
                                         required: 'Please input your password',
                                         minLength: {
