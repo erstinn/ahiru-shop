@@ -10,7 +10,8 @@
       "en": "Adorable yellow duckling, perfect as a pet or gift.",
       "jp": "プレゼントやペットにピッタリな可愛い黄色いアヒル。"
     },
-    "stock": 1
+    "stock": 1,
+    "price": 10
   },
   {
     "type": "duck",
@@ -23,7 +24,8 @@
       "en": "Pair of adult ducks, great for breeding or pond decoration.",
       "jp": "カモのつがい。繁殖でき、池のデコレーションにも使える。"
     },
-    "stock": 3
+    "stock": 3,
+    "price": 10
   },
   {
     "type": "duck",
@@ -36,7 +38,8 @@
       "en": "Beautiful white duck, known for its elegance and grace.",
       "jp": "白くて美しいカモ。"
     },
-    "stock": 89
+    "stock": 89,
+    "price": 15
   },
   {
     "type": "duck",
@@ -63,7 +66,9 @@
       "jp": "アヒルの群れ。アヒル牧場をすぐ増やせる。"
     },
 
-    "stock": 73
+    "stock": 73,
+    "price": 15
+
   },
   {
     "type": "others",
@@ -76,7 +81,9 @@
       "en": "Cute and fluffy rabbit, perfect as a pet or for animal lovers.",
       "jp": "ふわふわで可愛いウサギペット。"
     },
-    "stock": 0
+    "stock": 0,
+    "price": 7
+
   },
   {
     "type": "others",
@@ -89,7 +96,8 @@
       "en": "Colorful and vibrant rooster, adds a touch of farm charm to any setting.",
       "jp": " チャーミングで鮮やかなおんどり。"
     },
-    "stock": 8
+    "stock": 8,
+    "price": 17
   },
   {
     "type": "others",
@@ -102,20 +110,23 @@
       "en": "Friendly and productive hen, provides fresh eggs for your breakfast.",
       "jp": "友好的なめんどり。新鮮な朝ごはんの卵をくれる。"
     },
-    "stock": 63
+    "stock": 63,
+    "price": 17
+
   },
   {
     "type": "others",
     "img": "/animals/horse1.png",
     "name": {
-      "en": "Arabian Horse", 
+      "en": "Arabian Horse",
       "jp": "アラブ種"
     },
     "desc": {
       "en": "Elegant and majestic horse, ideal for horseback riding or equestrian enthusiasts.",
       "jp": "美しくて鼻が大きい馬。"
     },
-    "stock": 30
+    "stock": 30,
+    "price": 470
   },
   {
     "type": "others",
@@ -128,7 +139,8 @@
       "en": "Graceful horse with a stunning coat, a beautiful addition to any ranch or stable.",
       "jp": "きれいな毛並みをもつ優雅な馬。どんな牧場や馬小屋にいても美しく目を引く。"
     },
-    "stock": 95
+    "stock": 95,
+    "price": 120000
   },
   {
     "type": "others",
@@ -141,7 +153,8 @@
       "en": "Adorable and chirpy chick, great for educational purposes or as a classroom pet.",
       "jp": "子供の教育を目的に飼育でき、クラスのペットにもなる。"
     },
-    "stock": 12
+    "stock": 12,
+    "price": 6
   },
   {
     "type": "others",
@@ -154,7 +167,8 @@
       "en": "Fluffy baby chick, a delightful gift for children or a charming addition to your farm.",
       "jp": "プレゼントとして子供にあげても良いし、農場の可愛いマスコットにもなる。"
     },
-    "stock": 37
+    "stock": 37,
+    "price": 6
   },
   {
     "type": "others",
@@ -167,7 +181,8 @@
       "en": "Gentle and docile cow, perfect for dairy production or as a friendly companion.",
       "jp": "酪農生産にいっぱい使える大人しい牛。"
     },
-    "stock": 64
+    "stock": 64,
+    "price": 2100
   },
   {
     "type": "others",
@@ -181,7 +196,8 @@
       "jp": "強くて逞しい牛、農場に一番必要な家畜。"
     },
   
-    "stock": 22
+    "stock": 22,
+    "price": 1200
   },
   {
     "type": "others",
@@ -194,7 +210,8 @@
       "en": "Soft and woolly sheep, provides cozy wool and brings a peaceful atmosphere to your farm.",
       "jp": ""
     },
-    "stock": 79
+    "stock": 79,
+    "price": 210
   },
   {
     "type": "others",
@@ -207,7 +224,8 @@
       "en": "Fluffy sheep with a curious demeanor, an adorable addition to your pasture or petting zoo.",
       "jp": "好奇心旺盛で可愛らしいふわふわな羊。農場やふれあい動物園にピッタリ。"
     },
-    "stock": 50
+    "stock": 50,
+    "price": 170
   },
   {
     "type": "misc",
@@ -220,7 +238,8 @@
       "en": "A fragrant herb commonly used in cooking, known for its fresh and slightly sweet flavor.",
       "jp": "主に料理で使われる香り高いハーブ。新鮮でほんのり甘い風味が特徴。"
     },
-    "stock": 20
+    "stock": 20,
+    "price": 17
   },
   {
     "type": "misc",
@@ -233,7 +252,9 @@
       "en": "Dried grasses and legumes, commonly used as animal fodder or for decorative purposes.",
       "jp": "豆や乾燥した草。デコレーションや餌に使える。"
     },
-    "stock": 15
+    "stock": 15,
+    "price": 15
+
   },
   {
     "type": "misc",
@@ -246,7 +267,8 @@
       "en": "A nutrient-rich liquid produced by mammals, commonly consumed as a beverage or used in cooking.",
       "jp": "哺乳動物からとれる栄養豊富な液体。主に飲み物や料理の材料として用いられる。"
     },
-    "stock": 30
+    "stock": 30,
+    "price": 2
   },
   { 
     "type": "misc",
@@ -272,7 +294,8 @@
       "en": "A collection of assorted spices, perfect for enhancing the flavors of your dishes.",
       "jp": "様々なスパイスの詰め合わせ。料理の腕を磨くのにもってこい。"
     },
-    "stock": 25
+    "stock": 25,
+    "price": 16
   },
   {
     "type": "misc",
@@ -285,7 +308,8 @@
       "en": "A star-shaped spice with a licorice-like flavor, commonly used in cooking and beverages.",
       "jp": "星形のスパイス。よく料理や飲み物に使われるリコリスみたいな味。"
     },
-    "stock": 22
+    "stock": 22,
+    "price": 19
   },
   {
     "type": "misc",
@@ -298,6 +322,7 @@
       "en": "Red, juicy fruits commonly used in salads, sauces, and various culinary dishes.",
       "jp": "赤くてみずみずしい果実。サラダやソース等さまざまな料理に用いられる。"
     },
-    "stock": 28
+    "stock": 28,
+    "price": 7
   }
 ]

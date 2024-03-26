@@ -34,6 +34,10 @@ const ProductSchema = new mongoose.Schema(
         stock : {
             type: 'Number',
         },
+        price : {
+            type: 'Number',
+            required: true
+        },
     }
 )
 // const TransactionSchema = new mongoose.Schema(

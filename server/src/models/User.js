@@ -1,5 +1,28 @@
 import mongoose from "mongoose";
 
+const PaymentMethodSchema = new mongoose.Schema({
+    method: {
+        type: String,
+        enum: {
+            values: ['cod', 'paypal', 'duckcard'],
+            message: '{VALUE} is not supported'
+        }
+    },
+    account: {
+        type: String,
+        max: 50,
+        validate: {
+            validator: (v) => isAccountNumber,
+            message: 'Validation failed'
+        },
+        required: () => {
+            this.method === 'paypal' || this.method === 'duckcard'
+        }
+    },
+    expiration: { //to set on node
+        type: Date,
+    }
+})
 
 const UserSchema = new mongoose.Schema(
     {
@@ -45,24 +68,7 @@ const UserSchema = new mongoose.Schema(
             max: 255,
         },
         paymentMethod: {
-            method: {
-                type: String,
-                enum: {
-                    values: ['cod', 'paypal', 'duckcard'],
-                    message: '{VALUE} is not supported'
-                }
-            },
-            account: {
-                type: String,
-                max: 50,
-                validate: {
-                    validator: (v) => isAccountNumber,
-                    message: 'Validation failed'
-                }
-            },
-            expiration: { //to set on node
-                type: Date,
-            }
+            type: [PaymentMethodSchema] //can have multiple methods
         },
         profilePic: {
             type: String,

@@ -45,7 +45,8 @@ export const getOwnedProducts = async (req, res) => {
 // 売ると、シンプルでサイトのお金が増える
 export const sellProduct = async (req, res) => {
    try {
-      const sellProduct
+
+      const soldProduct = await
    } catch (e) {
       res.status(500).json({ success: false, message: 'Error in selling the product' });
 
@@ -58,5 +59,13 @@ export const purchaseProduct = async (req, res) => {
    } catch (e) {
       res.status(500).json({ success: false, message: 'Error in purchasing the product' });
 
+   }
+}
+
+export const refundProduct = async (req, res) => {
+   try {
+
+   } catch (e) {
+      res.status(500).json({ success: false, message: 'Error in purchasing the product' });
    }
 }
